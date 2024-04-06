@@ -7,7 +7,6 @@ func _post_import(scene: Node) -> Object:
 	
 	var meshes = scene.find_children("*", "MeshInstance3D") as Array[MeshInstance3D]
 	for mesh in meshes:
-		mesh.collis
 		mesh.create_trimesh_collision()
 	
 	return scene
