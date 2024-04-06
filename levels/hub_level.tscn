@@ -3,7 +3,6 @@
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_o5c6e"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="2_nfojo"]
 [ext_resource type="PackedScene" uid="uid://b45fsm1j2m45s" path="res://addons/kenney_nature-kit/platform.glb" id="3_omis6"]
-[ext_resource type="Texture2D" uid="uid://cgrsebhtxokcr" path="res://levels/gates_icons/starcatcher.png" id="5_g2rnh"]
 [ext_resource type="Texture2D" uid="uid://ci70onah2w3b5" path="res://levels/gates_icons/sketchy_render.png" id="5_h364f"]
 [ext_resource type="PackedScene" uid="uid://b8rgusiv41u0o" path="res://addons/kenney_nature-kit/platform_beach.glb" id="5_pe3j2"]
 [ext_resource type="PackedScene" uid="uid://bp5itrnss80ch" path="res://addons/kenney_nature-kit/cliff_blockCave_rock.glb" id="5_spd35"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://w7gbua7abmx3" path="res://levels/gates_icons/gdquest_demo.png" id="7_21cgs"]
 [ext_resource type="PackedScene" uid="uid://r111r3yggait" path="res://addons/kenney_nature-kit/cliff_blockQuarter_rock.glb" id="8_cv2tm"]
 [ext_resource type="PackedScene" uid="uid://dnhwc144rnivm" path="res://addons/kenney_nature-kit/cliff_blockSlope_rock.glb" id="9_bb5at"]
+[ext_resource type="Texture2D" uid="uid://dn16u2j31ra3q" path="res://levels/gates_icons/godot_platformer.png" id="9_ln77f"]
 [ext_resource type="PackedScene" uid="uid://bphqrgooxxau4" path="res://addons/kenney_nature-kit/cliff_block_rock.glb" id="10_2x6cd"]
 [ext_resource type="PackedScene" uid="uid://dd5j0rj4wfhbo" path="res://addons/kenney_nature-kit/cliff_cave_rock.glb" id="11_2sr4b"]
 [ext_resource type="PackedScene" uid="uid://2util287tvwp" path="res://addons/kenney_nature-kit/cliff_cornerInnerLarge_rock.glb" id="12_rr250"]
@@ -142,9 +142,6 @@ texture = ExtResource("7_21cgs")
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -15, -0.262983, -32)
 url = "starcatcher.gate"
 
-[node name="Sprite3D" parent="Portals/Portal5" index="2"]
-texture = ExtResource("5_g2rnh")
-
 [node name="Portal6" parent="Portals" instance=ExtResource("25_yv8ub")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -21, -0.262983, -32)
 url = "godot_open_rts.gate"
@@ -157,6 +154,9 @@ region_rect = Rect2(589, 39, 414, 1039)
 [node name="Portal7" parent="Portals" instance=ExtResource("25_yv8ub")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -27, -0.262983, -32)
 url = "godot_platformer.gate"
+
+[node name="Sprite3D" parent="Portals/Portal7" index="2"]
+texture = ExtResource("9_ln77f")
 
 [node name="Env" type="Node3D" parent="."]
 
