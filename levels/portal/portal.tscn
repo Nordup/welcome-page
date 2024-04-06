@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dykqq00uscsiy"]
+[gd_scene load_steps=10 format=3 uid="uid://dykqq00uscsiy"]
 
 [ext_resource type="Script" path="res://levels/portal/portal.gd" id="1_4deld"]
 [ext_resource type="Material" uid="uid://ca0wtj0y4axjm" path="res://levels/portal/portal.material" id="2_yk1uj"]
 [ext_resource type="PackedScene" uid="uid://dvaijnuh36hi2" path="res://addons/kenney_nature-kit/doorOpen.glb" id="3_wkxak"]
+[ext_resource type="Texture2D" uid="uid://cgrsebhtxokcr" path="res://levels/gates_icons/starcatcher.png" id="4_ajibf"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uqi57"]
 material = ExtResource("2_yk1uj")
@@ -80,5 +81,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="doorOpen2" parent="." instance=ExtResource("3_wkxak")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616703)
+modulate = Color(1, 1, 1, 0.87451)
+texture = ExtResource("4_ajibf")
+region_enabled = true
+region_rect = Rect2(372, 32, 219, 505)
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_entered"]

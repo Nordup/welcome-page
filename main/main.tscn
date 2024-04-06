@@ -57,3 +57,9 @@ player_spawner = NodePath("../PlayerSpawner")
 [connection signal="start_server" from="UI" to="Connection" method="start_server"]
 
 [editable path="HubLevel"]
+[editable path="HubLevel/Portals/Portal2"]
+[editable path="HubLevel/Portals/Portal3"]
+[editable path="HubLevel/Portals/Portal4"]
+[editable path="HubLevel/Portals/Portal5"]
+[editable path="HubLevel/Portals/Portal6"]
+[editable path="HubLevel/Portals/Portal7"]
