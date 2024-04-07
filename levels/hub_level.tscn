@@ -1,6 +1,7 @@
 [gd_scene load_steps=91 format=3 uid="uid://enpjmjm7ayyu"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_o5c6e"]
+[ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/one-6779.mp3" id="2_i3053"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="2_nfojo"]
 [ext_resource type="PackedScene" uid="uid://b45fsm1j2m45s" path="res://addons/kenney_nature-kit/platform.glb" id="3_omis6"]
 [ext_resource type="Texture2D" uid="uid://ci70onah2w3b5" path="res://levels/gates_icons/sketchy_render.png" id="5_h364f"]
@@ -29,7 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="25_yv8ub"]
 [ext_resource type="PackedScene" uid="uid://jctkiyjhbsbe" path="res://addons/kenney_nature-kit/cliff_top_rock.glb" id="26_st63w"]
 [ext_resource type="PackedScene" uid="uid://2vg5hwognhwe" path="res://addons/kenney_nature-kit/cliff_waterfallTop_rock.glb" id="27_a64wj"]
-[ext_resource type="PackedScene" uid="uid://dgivbmpa462so" path="res://addons/kenney_nature-kit/crops_dirtDoubleRowEnd.glb" id="29_wimpa"]
 [ext_resource type="PackedScene" uid="uid://1oyssrbhmu6o" path="res://addons/kenney_nature-kit/crops_dirtRowCorner.glb" id="30_sresa"]
 [ext_resource type="PackedScene" uid="uid://4rkg5b5lggy0" path="res://addons/kenney_nature-kit/crops_dirtRow.glb" id="31_ru77t"]
 [ext_resource type="PackedScene" uid="uid://cs2ces2b61wli" path="res://addons/kenney_nature-kit/crops_dirtRowEnd.glb" id="32_5mxw3"]
@@ -100,6 +100,28 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_o5c6e")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i3053")
+volume_db = -17.0
+autoplay = true
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 42, 56)
+pixel_size = 0.1
+modulate = Color(0.254902, 0.184314, 0.431373, 1)
+outline_modulate = Color(0.388235, 0.482353, 0.729412, 1)
+text = "Online Hub
+"
+font_size = 152
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -14, 35, -93)
+pixel_size = 0.1
+modulate = Color(0.254902, 0.184314, 0.431373, 1)
+outline_modulate = Color(0.388235, 0.482353, 0.729412, 1)
+text = "TheGates"
+font_size = 152
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 script = ExtResource("2_nfojo")
@@ -280,20 +302,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -4, -10)
 [node name="cliff_waterfallTop_rock3" parent="Env" instance=ExtResource("27_a64wj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, 2)
 
-[node name="crops_dirtDoubleRowEnd2" parent="Env" instance=ExtResource("29_wimpa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1, -23)
-
 [node name="crops_dirtRowCorner2" parent="Env" instance=ExtResource("30_sresa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, -27)
 
 [node name="crops_dirtRow2" parent="Env" instance=ExtResource("31_ru77t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -27)
 
 [node name="crops_dirtRowEnd2" parent="Env" instance=ExtResource("32_5mxw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, -27)
 
 [node name="crops_wheatStageB2" parent="Env" instance=ExtResource("33_jntnv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -27)
 
 [node name="fence_bendCenter2" parent="Env" instance=ExtResource("34_hrlio")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 13, -1, 10)
@@ -306,6 +325,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.60
 
 [node name="fence_planksDouble3" parent="Env" instance=ExtResource("36_nsu7l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.6022, -1, -23.5098)
+
+[node name="fence_planksDouble4" parent="Env" instance=ExtResource("36_nsu7l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.6022, -1, -19.5098)
+
+[node name="fence_planksDouble5" parent="Env" instance=ExtResource("36_nsu7l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.6022, -1, -15.5098)
 
 [node name="fence_simpleCenter2" parent="Env" instance=ExtResource("37_00kwu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -27)
@@ -380,10 +405,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -1, -23)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -1, -25)
 
 [node name="path_wood2" parent="Env" instance=ExtResource("62_hurkx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, -1, -22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, -1, -22)
 
 [node name="path_woodEnd2" parent="Env" instance=ExtResource("63_qnh6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, -1, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, -1, -20)
 
 [node name="plant_bushLargeTriangle2" parent="Env" instance=ExtResource("64_f0ned")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -1, -20)
@@ -392,10 +417,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -1, -20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, -1, -19)
 
 [node name="platform_beach2" parent="Env" instance=ExtResource("5_pe3j2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -1, -10)
 
 [node name="platform_stone2" parent="Env" instance=ExtResource("67_i6blj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -1, -23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, -1, -17)
 
 [node name="rock_largeA2" parent="Env" instance=ExtResource("68_i346o")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1, -1, -5)
@@ -491,7 +516,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -16)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -13)
 
 [node name="tree_pineTallA_detailed2" parent="Env" instance=ExtResource("96_fm1fm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1, -16)
 
 [node name="tree_pineTallC_detailed2" parent="Env" instance=ExtResource("97_2ju6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -19)
@@ -500,7 +525,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1, -19)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1, -25)
 
 [node name="tree_thin_dark2" parent="Env" instance=ExtResource("99_ko5lp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1, -24)
 
 [node name="tree_thin_fall2" parent="Env" instance=ExtResource("100_ole6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -1, -21)
@@ -543,23 +568,6 @@ omni_range = 18.211
 
 [node name="campfire_planks2" parent="Env" instance=ExtResource("85_6o8im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -1, -22)
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 51, 56)
-pixel_size = 0.1
-modulate = Color(0.254902, 0.184314, 0.431373, 1)
-outline_modulate = Color(0.388235, 0.482353, 0.729412, 1)
-text = "Online Hub
-"
-font_size = 152
-
-[node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -14, 51, -93)
-pixel_size = 0.1
-modulate = Color(0.254902, 0.184314, 0.431373, 1)
-outline_modulate = Color(0.388235, 0.482353, 0.729412, 1)
-text = "TheGates"
-font_size = 152
 
 [editable path="Portals/Portal2"]
 [editable path="Portals/Portal3"]
