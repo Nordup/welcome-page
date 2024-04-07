@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://enpjmjm7ayyu"]
+[gd_scene load_steps=114 format=3 uid="uid://enpjmjm7ayyu"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_o5c6e"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/one-6779.mp3" id="2_i3053"]
@@ -111,8 +111,18 @@
 [ext_resource type="PackedScene" uid="uid://clxkbfwruko2i" path="res://addons/kenney_nature-kit/plant_bush.glb" id="109_b22lj"]
 [ext_resource type="PackedScene" uid="uid://dj6o3oaja0ruj" path="res://addons/kenney_nature-kit/plant_bushLarge.glb" id="110_xjpc4"]
 [ext_resource type="PackedScene" uid="uid://bjdhgi6tk86sh" path="res://addons/kenney_nature-kit/plant_bushSmall.glb" id="111_yero3"]
+[ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="112_w70af"]
+[ext_resource type="Script" path="res://ui/mouse_mode.gd" id="113_cs1pg"]
 
 [node name="HubLevel" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("112_w70af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="MouseMode" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("113_cs1pg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
