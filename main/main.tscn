@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="5_wb2xi"]
 [ext_resource type="Script" path="res://voip/microphone.gd" id="6_fgpqb"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
-[ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level_2.tscn" id="10_acu3x"]
+[ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_40kex"]
 
