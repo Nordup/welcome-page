@@ -92,6 +92,6 @@ region_rect = Rect2(372, 32, 219, 505)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_cu8dv")
-volume_db = -10.0
+volume_db = -18.324
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_entered"]
