@@ -1,7 +1,5 @@
-[gd_scene load_steps=95 format=3 uid="uid://d3ougjr7jxnnt"]
+[gd_scene load_steps=93 format=3 uid="uid://d3ougjr7jxnnt"]
 
-[ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="1_buauq"]
-[ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_far5k"]
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="3_7uq64"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/one-6779.mp3" id="4_vrhbq"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="5_whw28"]
@@ -97,13 +95,8 @@
 
 [node name="HubLevel" type="Node3D"]
 
-[node name="MouseMode" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("2_far5k")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 22.7338, 0)
+transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
 shadow_enabled = true
 shadow_opacity = 0.57
 
@@ -148,8 +141,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26842, -1.20424, 11.3299)
 [node name="platform12" parent="SpawnPoints" instance=ExtResource("6_u6652")]
 transform = Transform3D(0.772578, 0, -0.634919, 0, 1, 0, 0.634919, 0, 0.772578, 42.2926, -1.20425, 9.19101)
 
-[node name="Player" parent="." instance=ExtResource("1_buauq")]
-
 [node name="Portals" type="Node3D" parent="."]
 
 [node name="Portal2" parent="Portals" instance=ExtResource("7_hrjno")]
@@ -176,7 +167,11 @@ transform = Transform3D(0.739047, 0, -5.96046e-08, 0, 0.739047, 0, 5.96046e-08, 
 texture = ExtResource("8_2qs3l")
 region_rect = Rect2(492, 2, 230, 498)
 
-[node name="AudioStreamPlayer3D" parent="Portals/Portal2" index="3"]
+[node name="Sprite3D2" parent="Portals/Portal2" index="3"]
+texture = ExtResource("8_2qs3l")
+region_rect = Rect2(492, 2, 230, 498)
+
+[node name="AudioStreamPlayer3D" parent="Portals/Portal2" index="4"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0)
 
 [node name="Portal3" parent="Portals" instance=ExtResource("7_hrjno")]
@@ -188,12 +183,19 @@ transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.744
 texture = ExtResource("9_pxk0f")
 region_rect = Rect2(372, 6, 219, 498)
 
+[node name="Sprite3D2" parent="Portals/Portal3" index="3"]
+texture = ExtResource("9_pxk0f")
+region_rect = Rect2(372, 6, 219, 498)
+
 [node name="Portal4" parent="Portals" instance=ExtResource("7_hrjno")]
 transform = Transform3D(-1.48428, 0, -0.216612, 0, 1.5, 0, 0.216612, 0, -1.48428, 7.43998, -1.25578, 58.0572)
 url = "gdquest_demo.gate"
 
 [node name="Sprite3D" parent="Portals/Portal4" index="2"]
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
+texture = ExtResource("10_u86pi")
+
+[node name="Sprite3D2" parent="Portals/Portal4" index="3"]
 texture = ExtResource("10_u86pi")
 
 [node name="Portal5" parent="Portals" instance=ExtResource("7_hrjno")]
@@ -213,12 +215,20 @@ pixel_size = 0.005
 texture = ExtResource("11_xcxeu")
 region_rect = Rect2(589, 39, 414, 1039)
 
+[node name="Sprite3D2" parent="Portals/Portal6" index="3"]
+pixel_size = 0.005
+texture = ExtResource("11_xcxeu")
+region_rect = Rect2(589, 39, 414, 1039)
+
 [node name="Portal7" parent="Portals" instance=ExtResource("7_hrjno")]
 transform = Transform3D(-0.375849, 0, 1.45215, 0, 1.5, 0, -1.45215, 0, -0.375849, -76.6541, 2.56318, 15.594)
 url = "godot_platformer.gate"
 
 [node name="Sprite3D" parent="Portals/Portal7" index="2"]
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
+texture = ExtResource("12_ydmax")
+
+[node name="Sprite3D2" parent="Portals/Portal7" index="3"]
 texture = ExtResource("12_ydmax")
 
 [node name="Env" type="Node3D" parent="."]
@@ -546,15 +556,6 @@ transform = Transform3D(1, 0, 0, 0, 0.611897, 0, 0, 0, 1, -84.7417, 2.70824, 7.6
 
 [node name="crops_wheatStageB3" parent="Env" instance=ExtResource("35_e2kiq")]
 transform = Transform3D(1, 0, 0, 0, 0.792307, 0, 0, 0, 1, 9.72303, -1, 67.7715)
-
-[node name="crops_wheatStageB4" parent="Env" instance=ExtResource("35_e2kiq")]
-transform = Transform3D(0.097635, 0, 0.995222, 0, 0.547741, 0, -0.995222, 0, 0.097635, -10.8318, -1, 63.5686)
-
-[node name="crops_wheatStageB5" parent="Env" instance=ExtResource("35_e2kiq")]
-transform = Transform3D(0.097635, 0, 0.995222, 0, 0.547741, 0, -0.995222, 0, 0.097635, -10.6196, -1, 65.4312)
-
-[node name="crops_wheatStageB6" parent="Env" instance=ExtResource("35_e2kiq")]
-transform = Transform3D(0.097635, 0, 0.995222, 0, 0.547741, 0, -0.995222, 0, 0.097635, -8.26771, -1, 65.4312)
 
 [node name="fence_bendCenter3" parent="Env" instance=ExtResource("36_tymg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.729, -1, -4.6)

@@ -37,11 +37,12 @@ script = ExtResource("6_fgpqb")
 
 [node name="Players" type="Node3D" parent="."]
 
-[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_points")]
 _spawnable_scenes = PackedStringArray("res://player/player.tscn")
 spawn_path = NodePath("../Players")
 script = ExtResource("4_edyrb")
 player_scene = ExtResource("5_wb2xi")
+spawn_points = NodePath("../HubLevel/SpawnPoints")
 
 [node name="FallChecker" type="Node" parent="." node_paths=PackedStringArray("player_spawner")]
 script = ExtResource("9_vk48u")
@@ -53,3 +54,11 @@ player_spawner = NodePath("../PlayerSpawner")
 [connection signal="disconnected" from="Connection" to="UI" method="show_ui"]
 [connection signal="connect_client" from="UI" to="Connection" method="start_client"]
 [connection signal="start_server" from="UI" to="Connection" method="start_server"]
+
+[editable path="HubLevel"]
+[editable path="HubLevel/Portals/Portal2"]
+[editable path="HubLevel/Portals/Portal3"]
+[editable path="HubLevel/Portals/Portal4"]
+[editable path="HubLevel/Portals/Portal5"]
+[editable path="HubLevel/Portals/Portal6"]
+[editable path="HubLevel/Portals/Portal7"]
