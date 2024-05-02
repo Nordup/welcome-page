@@ -11,7 +11,6 @@ uniform vec2 screen_blue_offset = vec2(0.0);
 uniform float pixel_size = 20.0;
 
 void fragment() {
-	
 	vec2 scaled_uv = round(UV * pixel_size) / pixel_size;
 	
 	float face_red = 1.0 - texture(face_texture, screen_red_offset + scaled_uv).x;
@@ -36,5 +35,4 @@ void fragment() {
 	vec3 fill = screen_color.rgb * screen_color.a;
 	
 	EMISSION = (iris + fill) * grid * intensity;
-	
 }

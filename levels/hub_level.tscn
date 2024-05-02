@@ -130,16 +130,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559841, 0, 0.115017)
 script = ExtResource("5_whw28")
 
 [node name="platform4" parent="SpawnPoints" instance=ExtResource("6_u6652")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.3761, -1.20425, 45.3549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3284, -1.20425, 42.4384)
 
 [node name="platform5" parent="SpawnPoints" instance=ExtResource("6_u6652")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.4329, 2.65192, 7.23728)
 
 [node name="platform11" parent="SpawnPoints" instance=ExtResource("6_u6652")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26842, -1.20424, 11.3299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3791, -1.20424, 40.7068)
 
 [node name="platform12" parent="SpawnPoints" instance=ExtResource("6_u6652")]
-transform = Transform3D(0.772578, 0, -0.634919, 0, 1, 0, 0.634919, 0, 0.772578, 42.2926, -1.20425, 9.19101)
+transform = Transform3D(0.999826, 0, 0.018639, 0, 1, 0, -0.018639, 0, 0.999826, 49.997, -1.20425, 14.9412)
 
 [node name="Portals" type="Node3D" parent="."]
 
@@ -206,7 +206,7 @@ url = "starcatcher.gate"
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
 
 [node name="Portal6" parent="Portals" instance=ExtResource("7_hrjno")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -44.1856, -1.19041, 27.5548)
+transform = Transform3D(-0.10991, 0, 1.49597, 0, 1.5, 0, -1.49597, 0, -0.10991, -46.9404, -1.19041, 36.7663)
 url = "godot_open_rts.gate"
 
 [node name="Sprite3D" parent="Portals/Portal6" index="2"]
