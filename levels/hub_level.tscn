@@ -213,12 +213,12 @@ url = "godot_open_rts.gate"
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
 pixel_size = 0.005
 texture = ExtResource("11_xcxeu")
-region_rect = Rect2(589, 39, 414, 1039)
+region_rect = Rect2(589, 39, 434.72, 1017.95)
 
 [node name="Sprite3D2" parent="Portals/Portal6" index="3"]
 pixel_size = 0.005
 texture = ExtResource("11_xcxeu")
-region_rect = Rect2(589, 39, 414, 1039)
+region_rect = Rect2(589, 39, 434.72, 1017.95)
 
 [node name="Portal7" parent="Portals" instance=ExtResource("7_hrjno")]
 transform = Transform3D(-0.375849, 0, 1.45215, 0, 1.5, 0, -1.45215, 0, -0.375849, -76.6541, 2.56318, 15.594)
