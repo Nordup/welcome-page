@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=13 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
+[ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
 [ext_resource type="Script" path="res://voip/voip_manager.gd" id="2_u8axh"]
 [ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://user_data/user_data_manager.tscn" id="3_rwvlu"]
 [ext_resource type="PackedScene" uid="uid://bjywb13vy4hl4" path="res://voip/voip_user.tscn" id="3_tfkyd"]
@@ -14,6 +15,9 @@
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_40kex"]
 
 [node name="Main" type="Node"]
+
+[node name="ResolutionChanger" type="Node" parent="."]
+script = ExtResource("1_mexsf")
 
 [node name="Connection" type="Node" parent="."]
 script = ExtResource("1_hlrxf")
