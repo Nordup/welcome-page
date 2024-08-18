@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://levels/portal/portal.gd" id="1_4deld"]
 [ext_resource type="Material" uid="uid://ca0wtj0y4axjm" path="res://levels/portal/portal.material" id="2_yk1uj"]
 [ext_resource type="PackedScene" uid="uid://dvaijnuh36hi2" path="res://addons/kenney_nature-kit/doorOpen.glb" id="3_wkxak"]
-[ext_resource type="Texture2D" uid="uid://cgrsebhtxokcr" path="res://levels/gates_icons/starcatcher.png" id="4_ajibf"]
-[ext_resource type="AudioStream" uid="uid://du5311qqqt774" path="res://levels/laser3.ogg" id="5_cu8dv"]
+[ext_resource type="Texture2D" uid="uid://cgrsebhtxokcr" path="res://levels/gates_icons/starcatcher.png" id="4_m21lw"]
+[ext_resource type="AudioStream" uid="uid://du5311qqqt774" path="res://levels/portal/laser3.ogg" id="5_upfnt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uqi57"]
 material = ExtResource("2_yk1uj")
@@ -86,7 +86,7 @@ autoplay = "idle"
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616703)
 modulate = Color(1, 1, 1, 0.87451)
-texture = ExtResource("4_ajibf")
+texture = ExtResource("4_m21lw")
 region_enabled = true
 region_rect = Rect2(372, 32, 219, 505)
 
@@ -94,12 +94,12 @@ region_rect = Rect2(372, 32, 219, 505)
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.744, -0.067)
 flip_h = true
 modulate = Color(1, 1, 1, 0.87451)
-texture = ExtResource("4_ajibf")
+texture = ExtResource("4_m21lw")
 region_enabled = true
 region_rect = Rect2(372, 32, 219, 505)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_cu8dv")
+stream = ExtResource("5_upfnt")
 volume_db = -18.324
 
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_entered"]

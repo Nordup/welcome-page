@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc1m0p75myj0j"]
+
+[ext_resource type="PackedScene" uid="uid://bphqrgooxxau4" path="res://addons/kenney_nature-kit/cliff_block_rock.glb" id="1_7x6t6"]
+[ext_resource type="PackedScene" uid="uid://desjbfer33ky6" path="res://addons/kenney_nature-kit/cliff_stepsCorner_rock.glb" id="2_wiwq0"]
+[ext_resource type="PackedScene" uid="uid://b1vb46v1mlfx6" path="res://addons/kenney_nature-kit/cliff_steps_rock.glb" id="3_obscg"]
+
+[node name="InformationStand" type="Node3D"]
+
+[node name="cliff_block_rock2" parent="." instance=ExtResource("1_7x6t6")]
+transform = Transform3D(4.06753, 0, 0, 0, 1, 0, 0, 0, 4.08679, 0, 0, 0)
+
+[node name="cliff_stepsCorner_rock2" parent="." instance=ExtResource("2_wiwq0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.017, 0, -9.979)
+
+[node name="cliff_stepsCorner_rock4" parent="." instance=ExtResource("2_wiwq0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, 9.993)
+
+[node name="cliff_stepsCorner_rock3" parent="." instance=ExtResource("2_wiwq0")]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -9.959, 0, -9.979)
+
+[node name="cliff_stepsCorner_rock5" parent="." instance=ExtResource("2_wiwq0")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, -9.959, 0, 9.993)
+
+[node name="cliff_steps_rock2" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.017, 0, -9.979)
+
+[node name="cliff_steps_rock4" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -5.984)
+
+[node name="cliff_steps_rock7" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -1.987)
+
+[node name="cliff_steps_rock8" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, 2.001)
+
+[node name="cliff_steps_rock9" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, 5.997)
+
+[node name="cliff_steps_rock3" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.021, 0, -9.979)
+
+[node name="cliff_steps_rock5" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.969, 0, -9.979)
+
+[node name="cliff_steps_rock6" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.963, 0, -9.979)
+
+[node name="cliff_steps_rock14" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.963, 0, 9.993)
+
+[node name="cliff_steps_rock15" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.969, 0, 9.993)
+
+[node name="cliff_steps_rock16" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.021, 0, 9.993)
+
+[node name="cliff_steps_rock17" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.017, 0, 9.993)
+
+[node name="cliff_steps_rock10" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -5.984)
+
+[node name="cliff_steps_rock11" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -1.987)
+
+[node name="cliff_steps_rock12" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, 2.001)
+
+[node name="cliff_steps_rock13" parent="." instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, 5.997)
