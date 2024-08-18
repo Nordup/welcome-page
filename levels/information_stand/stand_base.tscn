@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqhnlx4l6yhws"]
+
+[ext_resource type="Script" path="res://levels/information_stand/stand_base.gd" id="1_ckddb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57lvq"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_l4ntv"]
+size = Vector2(10, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gau4"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.164706)
+
+[node name="StandBase" type="Node3D" node_paths=PackedStringArray("mesh")]
+script = ExtResource("1_ckddb")
+mesh = NodePath("Mesh")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 7, 8.1)
+material_override = SubResource("StandardMaterial3D_57lvq")
+mesh = SubResource("QuadMesh_l4ntv")
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 8.1)
+material_override = SubResource("StandardMaterial3D_5gau4")
+mesh = SubResource("QuadMesh_l4ntv")
