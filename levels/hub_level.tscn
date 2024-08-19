@@ -209,7 +209,7 @@ url = "starcatcher.gate"
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
 
 [node name="Portal6" parent="Portals" instance=ExtResource("7_hrjno")]
-transform = Transform3D(-0.10991, 0, 1.49597, 0, 1.5, 0, -1.49597, 0, -0.10991, -49.9829, -1.19041, 38.0593)
+transform = Transform3D(-0.10991, 0, 1.49597, 0, 1.5, 0, -1.49597, 0, -0.10991, -54.1026, -1.19041, 43.6096)
 url = "godot_open_rts.gate"
 
 [node name="Sprite3D" parent="Portals/Portal6" index="2"]
@@ -2532,10 +2532,10 @@ transform = Transform3D(13.2381, 0, 0, 0, 1, 0, 0, 0, 5.82028, 101.464, -0.96925
 transform = Transform3D(1.17123, 0, 0, 0, 1.17123, 0, 0, 0, 1.17123, -42.3511, 2.57736, 6.4952)
 
 [node name="statue_head2" parent="Env" instance=ExtResource("117_25vx1")]
-transform = Transform3D(1.2508, -0.371526, -0.670785, 0.417745, 1.40641, 0, 0.643019, -0.190996, 1.30481, -41.2041, -1.29602, 51.9699)
+transform = Transform3D(1.2508, -0.371526, -0.670785, 0.417745, 1.40641, 0, 0.643019, -0.190996, 1.30481, -55.4545, -1.29602, 56.9272)
 
 [node name="statue_head3" parent="Env" instance=ExtResource("117_25vx1")]
-transform = Transform3D(0.941241, -0.279577, -0.504772, 0.570424, 0.305153, 0.894647, -0.0870351, -1.02353, 0.404606, -45.6854, -0.510891, 50.1462)
+transform = Transform3D(0.941241, -0.279577, -0.504772, 0.570424, 0.305153, 0.894647, -0.0870351, -1.02353, 0.404606, -59.9358, -0.510891, 55.1035)
 
 [node name="statue_columnDamaged3" parent="Env" instance=ExtResource("67_hi4hg")]
 transform = Transform3D(1.46714, 0, 0, 0, 1.46714, 0, 0, 0, 1.46714, -84.7659, 2.941, 42.0501)
