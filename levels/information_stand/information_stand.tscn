@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc1m0p75myj0j"]
+[gd_scene load_steps=7 format=3 uid="uid://bc1m0p75myj0j"]
 
 [ext_resource type="PackedScene" uid="uid://bphqrgooxxau4" path="res://addons/kenney_nature-kit/cliff_block_rock.glb" id="1_7x6t6"]
 [ext_resource type="PackedScene" uid="uid://so4csw20ridj" path="res://levels/information_stand/stand_1.tscn" id="1_rvdu3"]
 [ext_resource type="PackedScene" uid="uid://dqhnlx4l6yhws" path="res://levels/information_stand/stand_base.tscn" id="1_unv7e"]
+[ext_resource type="PackedScene" uid="uid://cgqow7usnyaaw" path="res://levels/information_stand/stand_2.tscn" id="2_uy1l1"]
 [ext_resource type="PackedScene" uid="uid://desjbfer33ky6" path="res://addons/kenney_nature-kit/cliff_stepsCorner_rock.glb" id="2_wiwq0"]
 [ext_resource type="PackedScene" uid="uid://b1vb46v1mlfx6" path="res://addons/kenney_nature-kit/cliff_steps_rock.glb" id="3_obscg"]
 
@@ -18,18 +19,24 @@ size = Vector2i(2000, 1000)
 transparent_bg = true
 size = Vector2i(2000, 1000)
 
+[node name="Stand2" parent="SubViewport2" instance=ExtResource("2_uy1l1")]
+
 [node name="SubViewport3" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(2000, 1000)
+
+[node name="Stand2" parent="SubViewport3" instance=ExtResource("2_uy1l1")]
 
 [node name="StandBase" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("1_unv7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 viewport = NodePath("../SubViewport")
 
-[node name="StandBase2" parent="." instance=ExtResource("1_unv7e")]
+[node name="StandBase2" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("1_unv7e")]
+viewport = NodePath("../SubViewport2")
 
-[node name="StandBase3" parent="." instance=ExtResource("1_unv7e")]
+[node name="StandBase3" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("1_unv7e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+viewport = NodePath("../SubViewport3")
 
 [node name="Platform" type="Node3D" parent="."]
 

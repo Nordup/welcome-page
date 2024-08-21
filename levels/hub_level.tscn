@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://d3ougjr7jxnnt"]
+[gd_scene load_steps=94 format=3 uid="uid://d3ougjr7jxnnt"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="3_7uq64"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="3_ftqdc"]
@@ -68,9 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://dpi3qawwtjraj" path="res://addons/kenney_nature-kit/tree_thin_dark.glb" id="90_bxjdy"]
 [ext_resource type="PackedScene" uid="uid://dqcxpybuccrj6" path="res://addons/kenney_nature-kit/tree_thin_fall.glb" id="91_oxiur"]
 [ext_resource type="PackedScene" uid="uid://mh5i0yqse2pa" path="res://addons/kenney_nature-kit/campfire_planks.glb" id="92_wnedr"]
-[ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="93_wqnq0"]
 [ext_resource type="PackedScene" uid="uid://qn2edmqy452y" path="res://addons/kenney_nature-kit/rock_tallB.glb" id="93_y3vvo"]
-[ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="94_hm7n8"]
 [ext_resource type="PackedScene" uid="uid://bi55lre6o367h" path="res://addons/kenney_nature-kit/ground_riverCorner.glb" id="94_sk2ej"]
 [ext_resource type="PackedScene" uid="uid://bva637gqxntox" path="res://addons/kenney_nature-kit/ground_riverSide.glb" id="95_4moc5"]
 [ext_resource type="PackedScene" uid="uid://25hg7w72y8n4" path="res://addons/kenney_nature-kit/stone_tallE.glb" id="96_63k36"]
@@ -2595,11 +2593,6 @@ transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 40.
 
 [node name="platform6" parent="Env" instance=ExtResource("6_u6652")]
 transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 44.5905)
-
-[node name="Player" parent="." instance=ExtResource("93_wqnq0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1416, 2.6999, 61.9445)
-
-[node name="UI" parent="." instance=ExtResource("94_hm7n8")]
 
 [editable path="Portals/Portal2"]
 [editable path="Portals/Portal3"]
