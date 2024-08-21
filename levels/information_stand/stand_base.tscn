@@ -66,6 +66,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="statue_block" parent="Corner/statue_block2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
 disabled = true
@@ -75,6 +76,7 @@ transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, 
 
 [node name="statue_column" parent="Corner/statue_column2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -84,6 +86,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
 
 [node name="statue_column" parent="Corner/statue_column3/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -112,6 +115,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="statue_block" parent="Corner2/statue_block2/tmpParent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200001, 0)
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner2/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
 disabled = true
@@ -121,6 +125,7 @@ transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, 
 
 [node name="statue_column" parent="Corner2/statue_column2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner2/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -130,6 +135,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
 
 [node name="statue_column" parent="Corner2/statue_column3/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner2/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -157,6 +163,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="statue_block" parent="Corner3/statue_block2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner3/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
 disabled = true
@@ -166,6 +173,7 @@ transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, 
 
 [node name="statue_column" parent="Corner3/statue_column2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner3/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -175,6 +183,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
 
 [node name="statue_column" parent="Corner3/statue_column3/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner3/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -202,6 +211,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="statue_block" parent="Corner4/statue_block2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner4/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
 disabled = true
@@ -211,6 +221,7 @@ transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, 
 
 [node name="statue_column" parent="Corner4/statue_column2/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner4/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true
@@ -220,6 +231,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
 
 [node name="statue_column" parent="Corner4/statue_column3/tmpParent" index="0"]
 material_override = ExtResource("3_lih6l")
+cast_shadow = 0
 
 [node name="CollisionShape3D" parent="Corner4/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
 disabled = true

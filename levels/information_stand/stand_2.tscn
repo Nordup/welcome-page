@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dofy25pmcupns" path="res://levels/information_stand/assets/shader.png" id="3_xqu7y"]
 [ext_resource type="Texture2D" uid="uid://cjqp0m7hm0aw1" path="res://levels/information_stand/assets/tps.png" id="4_ax7j6"]
 [ext_resource type="Texture2D" uid="uid://csp5qnllc8gk0" path="res://levels/information_stand/assets/racing.png" id="5_bsi1i"]
+[ext_resource type="Texture2D" uid="uid://4ltgyyhoi2xx" path="res://levels/information_stand/assets/gates.png" id="6_pdxtf"]
 [ext_resource type="Texture2D" uid="uid://de8ra8yxleogd" path="res://levels/information_stand/assets/portals.png" id="7_nbk3k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf6gj"]
@@ -77,8 +78,6 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aiatf"]
 
 [node name="Stand2" type="Control"]
 layout_mode = 3
@@ -282,12 +281,11 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
 clip_children = 1
 layout_mode = 0
-offset_left = 150.0
+offset_left = 750.0
 offset_top = 580.0
-offset_right = 650.0
+offset_right = 1250.0
 offset_bottom = 861.25
 theme_override_styles/panel = SubResource("StyleBoxFlat_fqt3l")
 
@@ -295,7 +293,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fqt3l")
 modulate = Color(0.980392, 0.980392, 0.980392, 0.909804)
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_aiatf")
+texture = ExtResource("6_pdxtf")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 visible = false
