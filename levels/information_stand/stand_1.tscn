@@ -21,16 +21,17 @@ font_size = 80
 font_color = Color(0, 0.368627, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b57w5"]
-bg_color = Color(0, 0.729412, 0.0431373, 0.294118)
+bg_color = Color(0, 0.729412, 0.0431373, 0.501961)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_gkm0b"]
+line_spacing = -5.0
 font = ExtResource("1_fwqkn")
 font_size = 60
-font_color = Color(0.22701, 0.596263, 1.15514e-06, 1)
+font_color = Color(0.310617, 0.310617, 0.310617, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p82cw"]
 bg_color = Color(1, 1, 1, 1)
@@ -94,9 +95,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -850.0
-offset_top = 387.0
+offset_top = 374.0
 offset_right = -358.0
-offset_bottom = 538.0
+offset_bottom = 534.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_b57w5")
 text = "Search where
@@ -112,9 +113,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -265.0
-offset_top = 387.0
+offset_top = 374.0
 offset_right = 265.0
-offset_bottom = 538.0
+offset_bottom = 534.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_b57w5")
 text = "Explore
@@ -130,9 +131,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 370.0
-offset_top = 387.0
+offset_top = 374.0
 offset_right = 864.0
-offset_bottom = 538.0
+offset_bottom = 534.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_b57w5")
 text = "Travel

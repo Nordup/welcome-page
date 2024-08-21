@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dofy25pmcupns"
-path="res://.godot/imported/shader.png-980571e04b0f1c32354c04ce2b6d0bda.ctex"
+path.s3tc="res://.godot/imported/shader.png-980571e04b0f1c32354c04ce2b6d0bda.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://levels/information_stand/assets/shader.png"
-dest_files=["res://.godot/imported/shader.png-980571e04b0f1c32354c04ce2b6d0bda.ctex"]
+dest_files=["res://.godot/imported/shader.png-980571e04b0f1c32354c04ce2b6d0bda.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
