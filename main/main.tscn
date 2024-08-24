@@ -1,18 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=9 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
-[ext_resource type="Script" path="res://voip/voip_manager.gd" id="2_u8axh"]
 [ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://user_data/user_data_manager.tscn" id="3_rwvlu"]
-[ext_resource type="PackedScene" uid="uid://bjywb13vy4hl4" path="res://voip/voip_user.tscn" id="3_tfkyd"]
 [ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="5_wb2xi"]
-[ext_resource type="Script" path="res://voip/microphone.gd" id="6_fgpqb"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
 [ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_40kex"]
 
 [node name="Main" type="Node"]
 
@@ -24,21 +19,12 @@ script = ExtResource("1_hlrxf")
 port = 5052
 max_clients = 256
 host = "95.163.240.240"
+use_localhost_in_editor = true
 
 [node name="UserDataManager" parent="." instance=ExtResource("3_rwvlu")]
 
-[node name="VoipManager" type="Node" parent="." node_paths=PackedStringArray("player_spawner")]
-script = ExtResource("2_u8axh")
-user_scn = ExtResource("3_tfkyd")
-player_spawner = NodePath("../PlayerSpawner")
-
-[node name="Microphone" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamMicrophone_40kex")
-autoplay = true
-bus = &"Record"
-script = ExtResource("6_fgpqb")
-
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
+hide_ui_and_connect = false
 
 [node name="Players" type="Node3D" parent="."]
 
