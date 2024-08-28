@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-@export var viewport: Viewport
+@export var viewport: SubViewport
 @export var mesh: MeshInstance3D
 @export var print_log: bool
 
@@ -24,10 +24,20 @@ func start() -> void:
 	
 	mesh_copy = mesh.duplicate() as MeshInstance3D
 	mesh_copy.visible = true
-	add_child(mesh_copy)
-	
 	mesh_copy.material_override = mesh_copy.material_override.duplicate(true)
 	(mesh_copy.material_override as StandardMaterial3D).albedo_texture = viewport.get_texture()
+	add_child(mesh_copy)
+	
+	# Wait viewport to draw
+	await get_tree().process_frame
+	await get_tree().process_frame
+	
+	# Generate mipmaps and replace texture
+	var image = viewport.get_texture().get_image()
+	image.generate_mipmaps()
+	var texture = ImageTexture.create_from_image(image)
+	(mesh_copy.material_override as StandardMaterial3D).albedo_texture = texture
+	
 	try_print(name + " mesh copy displayed")
 
 
