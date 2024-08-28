@@ -115,5 +115,4 @@ change_name={
 
 environment/defaults/default_clear_color=Color(0.129412, 0.14902, 0.180392, 1)
 anti_aliasing/quality/msaa_3d=1
-anti_aliasing/quality/use_taa=true
 environment/defaults/default_environment="res://defaults/world_environment.tres"
