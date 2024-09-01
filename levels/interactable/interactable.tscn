@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5ot2xc1qqau7"]
+
+[ext_resource type="Shader" uid="uid://berxuvg6hsnni" path="res://levels/interactable/interactable.tres" id="1_1k1vx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnw17"]
+render_priority = 0
+shader = ExtResource("1_1k1vx")
+shader_parameter/Albedo = Color(0.490196, 0.819608, 1, 0.603922)
+shader_parameter/Speed = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0i8rg"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 1.0
+
+[node name="Interactable" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("ShaderMaterial_xnw17")
+mesh = SubResource("CylinderMesh_0i8rg")
+skeleton = NodePath("../..")
