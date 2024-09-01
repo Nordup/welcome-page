@@ -117,7 +117,7 @@ offset_bottom = 535.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_5r5b5")
 text = "Social
-Links"
+Media"
 label_settings = SubResource("LabelSettings_df0jb")
 horizontal_alignment = 1
 vertical_alignment = 1
