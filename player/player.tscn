@@ -85,6 +85,7 @@ mesh = SubResource("BoxMesh_kin6n")
 top_level = true
 script = ExtResource("2_2fob2")
 invert_mouse_y = true
+mouse_sensitivity = 0.15
 tilt_upper_limit = 0.48
 tilt_lower_limit = -0.8
 
