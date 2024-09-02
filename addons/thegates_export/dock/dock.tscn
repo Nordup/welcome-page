@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://addons/thegates_export/settings/export_settings_manager.gd" id="3_1g6iw"]
 [ext_resource type="FontFile" uid="uid://bhhqmrno12ef5" path="res://addons/thegates_export/fonts/Inter-Italic.otf" id="3_w6f2b"]
 [ext_resource type="FontFile" uid="uid://vedg7uktv7in" path="res://addons/thegates_export/fonts/Inter-BoldItalic.otf" id="4_brjrt"]
-[ext_resource type="Resource" uid="uid://gh3me1dmrdp7" path="res://addons/thegates_export/settings/export_settings.tres" id="4_c5yno"]
+[ext_resource type="Resource" uid="uid://c5nn4kyp27wl6" path="res://addons/thegates_export/settings/export_settings.tres" id="4_c5yno"]
 [ext_resource type="Script" path="res://addons/thegates_export/dock/link_opener.gd" id="4_s4553"]
 [ext_resource type="FontFile" uid="uid://c34vdr4dfgjti" path="res://addons/thegates_export/fonts/Monospace.ttf" id="5_ytjav"]
 

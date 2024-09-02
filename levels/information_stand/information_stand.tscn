@@ -46,6 +46,15 @@ viewport = NodePath("../SubViewport2")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 viewport = NodePath("../SubViewport3")
 
+[node name="Interactable" parent="." instance=ExtResource("8_wm5xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 3.01103)
+
+[node name="Interactable2" parent="." instance=ExtResource("8_wm5xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 0.0110261)
+
+[node name="Interactable3" parent="." instance=ExtResource("8_wm5xe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, -2.98897)
+
 [node name="Platform" type="Node3D" parent="."]
 
 [node name="cliff_block_rock2" parent="Platform" instance=ExtResource("1_7x6t6")]
@@ -110,12 +119,3 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959
 
 [node name="cliff_steps_rock13" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, 5.997)
-
-[node name="Interactable" parent="." instance=ExtResource("8_wm5xe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 3.01103)
-
-[node name="Interactable2" parent="." instance=ExtResource("8_wm5xe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 0.0110261)
-
-[node name="Interactable3" parent="." instance=ExtResource("8_wm5xe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, -2.98897)

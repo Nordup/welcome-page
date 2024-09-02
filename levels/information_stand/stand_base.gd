@@ -29,8 +29,10 @@ func start() -> void:
 	add_child(mesh_copy)
 	
 	# Wait viewport to draw
-	await get_tree().process_frame
-	await get_tree().process_frame
+	var scene_tree = get_tree()
+	await scene_tree.process_frame
+	await scene_tree.process_frame
+	if not is_inside_tree(): return # fix editor errors
 	
 	# Generate mipmaps and replace texture
 	var image = viewport.get_texture().get_image()

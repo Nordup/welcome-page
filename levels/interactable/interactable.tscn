@@ -1,22 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5ot2xc1qqau7"]
+[gd_scene load_steps=7 format=3 uid="uid://b5ot2xc1qqau7"]
 
 [ext_resource type="Shader" uid="uid://berxuvg6hsnni" path="res://levels/interactable/interactable.tres" id="1_1k1vx"]
+[ext_resource type="Script" path="res://levels/interactable/interactable.gd" id="1_pn2fl"]
+[ext_resource type="Script" path="res://levels/interactable/interactable_animation.gd" id="3_m2143"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnw17"]
 render_priority = 0
 shader = ExtResource("1_1k1vx")
-shader_parameter/Albedo = Color(0.490196, 0.819608, 1, 0.603922)
-shader_parameter/Speed = 3.0
+shader_parameter/Speed = 2.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0i8rg"]
 top_radius = 1.0
 bottom_radius = 1.0
-height = 1.0
+height = 6.0
 
-[node name="Interactable" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0e1i7"]
+radius = 1.0
+
+[node name="Interactable" type="Node3D" node_paths=PackedStringArray("area", "animation")]
+script = ExtResource("1_pn2fl")
+area = NodePath("Area3D")
+animation = NodePath("MeshInstance3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("ShaderMaterial_xnw17")
 mesh = SubResource("CylinderMesh_0i8rg")
 skeleton = NodePath("../..")
+script = ExtResource("3_m2143")
+active_color = Color(0, 1, 0.215686, 0.603922)
+active_gap = 2.0
+tween_time = 0.5
+tween_trans = 10
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_0e1i7")
