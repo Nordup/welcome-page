@@ -14,7 +14,7 @@ var current_text: String
 func _ready() -> void:
 	events.on_entered.connect(on_interactable_entered)
 	events.on_exited.connect(on_interactable_exited)
-	animation.play(HIDE)
+	animation.play(HIDE, -1, 1, true)
 
 
 func on_interactable_entered(text: String, interactable: InteractableBase) -> void:
