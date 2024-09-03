@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=11 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
 [ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://user_data/user_data_manager.tscn" id="3_rwvlu"]
+[ext_resource type="Script" path="res://levels/interactable/interactable_manager.gd" id="4_86hc2"]
 [ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
+[ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="5_wb2xi"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
 [ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
@@ -21,6 +23,10 @@ max_clients = 256
 host = "95.163.240.240"
 
 [node name="UserDataManager" parent="." instance=ExtResource("3_rwvlu")]
+
+[node name="InteractableManager" type="Node" parent="."]
+script = ExtResource("4_86hc2")
+events = ExtResource("5_irmxe")
 
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://desjbfer33ky6" path="res://addons/kenney_nature-kit/cliff_stepsCorner_rock.glb" id="2_wiwq0"]
 [ext_resource type="PackedScene" uid="uid://c5jhap73b6x8a" path="res://levels/information_stand/stand_3.tscn" id="3_d4vqh"]
 [ext_resource type="PackedScene" uid="uid://b1vb46v1mlfx6" path="res://addons/kenney_nature-kit/cliff_steps_rock.glb" id="3_obscg"]
-[ext_resource type="PackedScene" uid="uid://b5ot2xc1qqau7" path="res://levels/interactable/interactable.tscn" id="8_wm5xe"]
+[ext_resource type="PackedScene" uid="uid://du2h3ls050lkf" path="res://levels/interactable/interactable_link.tscn" id="9_j3awv"]
 
 [node name="InformationStand" type="Node3D"]
 
@@ -46,14 +46,17 @@ viewport = NodePath("../SubViewport2")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 viewport = NodePath("../SubViewport3")
 
-[node name="Interactable" parent="." instance=ExtResource("8_wm5xe")]
+[node name="InteractableLinkSocials" parent="." instance=ExtResource("9_j3awv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 3.01103)
+link = "https://lnk.bio/thegates"
 
-[node name="Interactable2" parent="." instance=ExtResource("8_wm5xe")]
+[node name="InteractableLinkSupport" parent="." instance=ExtResource("9_j3awv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 0.0110261)
+link = "https://github.com/thegatesbrowser"
 
-[node name="Interactable3" parent="." instance=ExtResource("8_wm5xe")]
+[node name="InteractableLinkCreate" parent="." instance=ExtResource("9_j3awv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, -2.98897)
+link = "https://docs.thegates.io"
 
 [node name="Platform" type="Node3D" parent="."]
 
