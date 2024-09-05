@@ -23,9 +23,21 @@ static func is_server() -> bool:
 	return "--server" in OS.get_cmdline_args()
 
 
+func get_port() -> int:
+	var args = OS.get_cmdline_args()
+	var index = args.find("--port")
+	
+	if index == -1 or args.size() <= index + 1: return -1
+	return int(args[index + 1])
+
+
 func start_server() -> void:
 	if max_clients == 0:
 		max_clients = 32
+	
+	var new_port = get_port()
+	if new_port != -1:
+		port = new_port
 	
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_server(port, max_clients)
@@ -34,7 +46,7 @@ func start_server() -> void:
 		disconnected.emit()
 		return
 	else:
-		print("Server started")
+		print("Server started on port " + str(port))
 		connected.emit()
 	
 	multiplayer.multiplayer_peer = peer

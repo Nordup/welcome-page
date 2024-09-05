@@ -17,6 +17,7 @@ func _exit_tree() -> void:
 
 
 func start() -> void:
+	if Connection.is_server(): return
 	if not is_instance_valid(viewport): return
 	if viewport == null: return
 	
