@@ -48,6 +48,7 @@ spawn_points = NodePath("../HubLevel/SpawnPoints")
 
 [connection signal="connect_client" from="UI" to="Connection" method="start_client"]
 [connection signal="start_server" from="UI" to="Connection" method="start_server"]
+[connection signal="disconnected" from="Connection" to="UI" method="disconnected"]
 
 [editable path="HubLevel"]
 [editable path="HubLevel/Portals/Portal2"]

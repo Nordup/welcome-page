@@ -27,6 +27,12 @@ func connect_client_emit() -> void:
 	hide_ui()
 
 
+func disconnected() -> void:
+	print("Wait 10 seconds and try connecting again")
+	await get_tree().create_timer(10).timeout
+	connect_client.emit()
+
+
 func hide_ui() -> void:
 	$MainMenu.visible = false
 	$InGameUI.visible = true

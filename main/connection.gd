@@ -81,7 +81,6 @@ func connected_to_server() -> void:
 func server_connection_failure() -> void:
 	print("Disconnected")
 	disconnected.emit()
-	start_client()
 
 
 func peer_connected(id: int) -> void:
