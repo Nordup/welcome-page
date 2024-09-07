@@ -81,6 +81,7 @@ func connected_to_server() -> void:
 func server_connection_failure() -> void:
 	print("Disconnected")
 	disconnected.emit()
+	start_client()
 
 
 func peer_connected(id: int) -> void:
@@ -92,8 +93,15 @@ func peer_disconnected(id: int) -> void:
 
 
 func disconnect_all() -> void:
-	multiplayer.peer_connected.disconnect(peer_connected)
-	multiplayer.peer_disconnected.disconnect(peer_disconnected)
-	multiplayer.connected_to_server.disconnect(connected_to_server)
-	multiplayer.server_disconnected.disconnect(server_connection_failure)
-	multiplayer.connection_failed.disconnect(server_connection_failure)
+	disconnect_from_signal("peer_connected", peer_connected)
+	disconnect_from_signal("peer_disconnected", peer_disconnected)
+	disconnect_from_signal("connected_to_server", connected_to_server)
+	disconnect_from_signal("server_disconnected", server_connection_failure)
+	disconnect_from_signal("connection_failed", server_connection_failure)
+	
+	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+
+
+func disconnect_from_signal(signal_name: String, callable: Callable) -> void:
+	if multiplayer.is_connected(signal_name, callable):
+		multiplayer.disconnect(signal_name, callable)

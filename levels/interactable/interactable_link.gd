@@ -8,3 +8,4 @@ func interact() -> void:
 		get_tree().send_command("open_link", [link])
 	else:
 		OS.shell_open(link)
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

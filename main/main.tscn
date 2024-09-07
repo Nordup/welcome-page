@@ -16,6 +16,12 @@
 [node name="ResolutionChanger" type="Node" parent="."]
 script = ExtResource("1_mexsf")
 
+[node name="InteractableManager" type="Node" parent="."]
+script = ExtResource("4_86hc2")
+events = ExtResource("5_irmxe")
+
+[node name="UI" parent="." instance=ExtResource("4_fvou2")]
+
 [node name="Connection" type="Node" parent="."]
 script = ExtResource("1_hlrxf")
 port = 56612
@@ -24,13 +30,10 @@ host = "95.163.240.240"
 
 [node name="UserDataManager" parent="." instance=ExtResource("3_rwvlu")]
 
-[node name="InteractableManager" type="Node" parent="."]
-script = ExtResource("4_86hc2")
-events = ExtResource("5_irmxe")
-
-[node name="UI" parent="." instance=ExtResource("4_fvou2")]
-
-[node name="Players" type="Node3D" parent="."]
+[node name="FallChecker" type="Node" parent="." node_paths=PackedStringArray("player_spawner")]
+script = ExtResource("9_vk48u")
+fall_height = -20.0
+player_spawner = NodePath("../PlayerSpawner")
 
 [node name="PlayerSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_points")]
 _spawnable_scenes = PackedStringArray("res://player/player.tscn")
@@ -39,14 +42,10 @@ script = ExtResource("4_edyrb")
 player_scene = ExtResource("5_wb2xi")
 spawn_points = NodePath("../HubLevel/SpawnPoints")
 
-[node name="FallChecker" type="Node" parent="." node_paths=PackedStringArray("player_spawner")]
-script = ExtResource("9_vk48u")
-fall_height = -20.0
-player_spawner = NodePath("../PlayerSpawner")
+[node name="Players" type="Node3D" parent="."]
 
 [node name="HubLevel" parent="." instance=ExtResource("10_acu3x")]
 
-[connection signal="disconnected" from="Connection" to="UI" method="show_ui"]
 [connection signal="connect_client" from="UI" to="Connection" method="start_client"]
 [connection signal="start_server" from="UI" to="Connection" method="start_server"]
 

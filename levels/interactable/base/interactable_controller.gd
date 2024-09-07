@@ -17,7 +17,7 @@ func _ready() -> void:
 func body_entered(body: Node3D) -> void:
 	if not body is Player: return
 	
-	if body.is_multiplayer_authority():
+	if body.is_multiplayer_authority() or not Connection.is_peer_connected:
 		interactable.entered()
 	
 	sound.play()
@@ -30,7 +30,7 @@ func body_entered(body: Node3D) -> void:
 func body_exited(body: Node3D) -> void:
 	if not body is Player: return
 	
-	if body.is_multiplayer_authority():
+	if body.is_multiplayer_authority() or not Connection.is_peer_connected:
 		interactable.exited()
 	
 	entered_count-=1

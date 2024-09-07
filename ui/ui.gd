@@ -10,6 +10,8 @@ func _ready():
 	if Connection.is_server(): return
 	
 	if hide_ui_and_connect:
+		# wait for local player
+		await get_tree().create_timer(1).timeout
 		connect_client_emit()
 	else:
 		show_ui()

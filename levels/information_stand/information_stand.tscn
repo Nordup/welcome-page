@@ -52,7 +52,7 @@ link = "https://lnk.bio/thegates"
 
 [node name="InteractableLinkSupport" parent="." instance=ExtResource("9_j3awv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, 0.0110261)
-link = "https://github.com/thegatesbrowser"
+link = "https://forms.gle/Hu7u6Dz3bqQcBz3g9"
 
 [node name="InteractableLinkCreate" parent="." instance=ExtResource("9_j3awv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4433, 3.7999, -2.98897)
