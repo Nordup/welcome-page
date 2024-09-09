@@ -15,6 +15,6 @@ func exited() -> void:
 	events.on_exited_emit(self)
 
 
-# Override this. Called from InteractableManager
+# Override this. Called from InteractableInputHandler
 func interact() -> void:
 	pass

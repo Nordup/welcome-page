@@ -1,5 +1,5 @@
 extends Node
-class_name InteractableManager
+class_name InteractableInputHandler
 
 @export var events: InteractableEvents
 

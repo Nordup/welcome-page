@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 class_name FallChecker
 
 @export var fall_height: float
