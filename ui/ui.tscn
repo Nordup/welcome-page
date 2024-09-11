@@ -18,9 +18,22 @@ mouse_filter = 1
 
 [node name="ConnectionStatus" parent="." instance=ExtResource("4_ywjc4")]
 layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_top = 30.0
+offset_right = 0.0
+offset_bottom = 30.0
+grow_vertical = 1
 
 [node name="Interactable" parent="." instance=ExtResource("6_mid3e")]
 layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="MouseMode" type="Control" parent="."]
 anchors_preset = 0

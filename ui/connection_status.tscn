@@ -1,29 +1,76 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb77fqgrkkjg5"]
+[gd_scene load_steps=5 format=3 uid="uid://bb77fqgrkkjg5"]
 
 [ext_resource type="Script" path="res://ui/connection_status.gd" id="1_fbogt"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="2_k7tqu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woibj"]
+content_margin_left = 18.0
+content_margin_right = 18.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 0.283333, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i88o8"]
+bg_color = Color(0, 0.917647, 0.317647, 0.592157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="ConnectionStatus" type="Control" node_paths=PackedStringArray("label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1685.0
+offset_bottom = -1028.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_fbogt")
-label = NodePath("Label")
+label = NodePath("PanelContainer/HBoxContainer/Label")
 
-[node name="Label" type="Label" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_right = 57.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_woibj")
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_woibj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
+theme_override_fonts/font = ExtResource("2_k7tqu")
+theme_override_font_sizes/font_size = 28
+text = "Status"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -180.0
-offset_top = 181.0
-offset_right = -140.0
-offset_bottom = 204.0
+offset_left = -20.0
+offset_bottom = 20.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("2_k7tqu")
-theme_override_font_sizes/font_size = 33
-text = "Connecting..."
+theme_override_styles/panel = SubResource("StyleBoxFlat_i88o8")

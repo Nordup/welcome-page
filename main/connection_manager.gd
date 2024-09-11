@@ -3,7 +3,9 @@ extends Node
 @export var connection: Connection
 @export var connection_status: ConnectionStatus
 
-const RECONNECT_DELAY = 10
+const RECONNECT_DELAY = 15
+
+var connected: bool
 
 
 func _ready():
@@ -23,12 +25,17 @@ func start_connection() -> void:
 
 
 func on_connected() -> void:
+	connected = true
 	connection_status.set_status(ConnectionStatus.Status.CONNECTED)
 
 
 func on_disconnected() -> void:
-	connection_status.set_status(ConnectionStatus.Status.DISCONNECTED)
+	if connected: connection_status.set_status(ConnectionStatus.Status.DISCONNECTED)
+	else: connection_status.set_status(ConnectionStatus.Status.FAILED_TO_CONNECT)
+	connected = false
 	
 	print("Wait %d seconds and try connecting again" % [RECONNECT_DELAY])
 	await get_tree().create_timer(RECONNECT_DELAY).timeout
 	connection.start_client()
+	
+	connection_status.set_status(ConnectionStatus.Status.CONNECTING)
