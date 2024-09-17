@@ -59,7 +59,7 @@ text = "If you cannot connect press 'H' to get help!"
 label_settings = SubResource("LabelSettings_1jko0")
 script = ExtResource("2_wr4ve")
 connection_events = ExtResource("3_pbi6a")
-help_link = "https://forms.gle/Hu7u6Dz3bqQcBz3g9"
+help_link = "https://forms.gle/QVeuaiRA5kAzgR1W8"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

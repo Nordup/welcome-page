@@ -18,8 +18,6 @@ func change_help_text(status : ConnectionEvents.Status) -> void:
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("help"): return
 	
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
 	if get_tree().has_method("send_command"):
 		get_tree().send_command("open_link", [help_link])
 	else:
