@@ -3,7 +3,7 @@ extends Node
 @export var connection: Connection
 @export var connection_status: ConnectionStatus
 
-const RECONNECT_DELAY = 15
+const RECONNECT_DELAY = 10
 
 var connected: bool
 
