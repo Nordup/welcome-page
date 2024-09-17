@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvl4jsitsxp0u"]
+[gd_scene load_steps=8 format=3 uid="uid://cvl4jsitsxp0u"]
 
 [ext_resource type="Script" path="res://ui/mouse_mode.gd" id="2_rhohj"]
 [ext_resource type="Script" path="res://ui/player_panel_contiainer.gd" id="4_0te8w"]
+[ext_resource type="PackedScene" uid="uid://cykcjgluho2ko" path="res://ui/chat.tscn" id="4_mj77r"]
 [ext_resource type="PackedScene" uid="uid://bb77fqgrkkjg5" path="res://ui/connection_status.tscn" id="4_ywjc4"]
 [ext_resource type="Resource" uid="uid://rclnl7v8k722" path="res://user_data/user_data_events.res" id="5_tmjbr"]
 [ext_resource type="PackedScene" uid="uid://dpre6ebljycx4" path="res://ui/player_panel.tscn" id="6_lta7j"]
@@ -15,6 +16,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="MouseMode" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("2_rhohj")
 
 [node name="ConnectionStatus" parent="." instance=ExtResource("4_ywjc4")]
 layout_mode = 1
@@ -35,9 +40,8 @@ anchor_top = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="MouseMode" type="Control" parent="."]
-anchors_preset = 0
-script = ExtResource("2_rhohj")
+[node name="Chat" parent="." instance=ExtResource("4_mj77r")]
+layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(350, 0)

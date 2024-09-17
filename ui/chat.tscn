@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cykcjgluho2ko"]
+
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_f1rcv"]
+[ext_resource type="Script" path="res://ui/help_text.gd" id="2_wr4ve"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="3_pbi6a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1jko0"]
+font = ExtResource("1_f1rcv")
+font_size = 22
+font_color = Color(1, 0.716667, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e8ob"]
+bg_color = Color(1, 1, 1, 0.313726)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.505882)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Chat" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -380.0
+offset_right = 580.0
+offset_bottom = -80.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="GetHelpText" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "If you cannot connect press 'H' to get help!"
+label_settings = SubResource("LabelSettings_1jko0")
+script = ExtResource("2_wr4ve")
+connection_events = ExtResource("3_pbi6a")
+help_link = "https://forms.gle/Hu7u6Dz3bqQcBz3g9"
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5e8ob")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_right = 14
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.556863)
+theme_override_fonts/font = ExtResource("1_f1rcv")
+theme_override_font_sizes/font_size = 22
+text = "Text chat is work in progress..."
+vertical_alignment = 1

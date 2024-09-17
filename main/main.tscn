@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=13 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="5_wb2xi"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="6_p6o06"]
 [ext_resource type="Script" path="res://main/connection_manager.gd" id="6_snsvh"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
 [ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
@@ -25,10 +26,10 @@ events = ExtResource("5_irmxe")
 
 [node name="UserDataManager" parent="Independents" instance=ExtResource("3_rwvlu")]
 
-[node name="ConnectionManager" type="Node" parent="." node_paths=PackedStringArray("connection", "connection_status")]
+[node name="ConnectionManager" type="Node" parent="." node_paths=PackedStringArray("connection")]
 script = ExtResource("6_snsvh")
 connection = NodePath("Connection")
-connection_status = NodePath("../UI/ConnectionStatus")
+connection_events = ExtResource("6_p6o06")
 
 [node name="Connection" type="Node" parent="ConnectionManager"]
 script = ExtResource("1_hlrxf")

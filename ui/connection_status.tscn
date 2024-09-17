@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bb77fqgrkkjg5"]
+[gd_scene load_steps=9 format=3 uid="uid://bb77fqgrkkjg5"]
 
 [ext_resource type="Script" path="res://ui/connection_status.gd" id="1_fbogt"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="2_k7tqu"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="2_pl3nx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woibj"]
 content_margin_left = 18.0
@@ -120,6 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_fbogt")
+connection_events = ExtResource("2_pl3nx")
 label = NodePath("Control/VBoxContainer/PanelContainer/HBoxContainer/Label")
 panel = NodePath("Control/VBoxContainer/PanelContainer")
 animation = NodePath("AnimationPlayer")
@@ -156,12 +158,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_woibj")
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
 theme_override_fonts/font = ExtResource("2_k7tqu")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 28
 text = "Status"
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="Control/VBoxContainer"]
 layout_mode = 2

@@ -4,14 +4,20 @@ class_name ConnectionStatus
 const SHOW = "show"
 const HIDE = "hide"
 
-enum Status { CONNECTING, FAILED_TO_CONNECT, CONNECTED, DISCONNECTED}
 const status_body = {
-	Status.CONNECTING			: { "text" : "Connecting...",		"color" : Color.YELLOW },
-	Status.FAILED_TO_CONNECT	: { "text" : "Failed to connect",	"color" : Color.RED },
-	Status.CONNECTED			: { "text" : "Connected",			"color" : Color.GREEN },
-	Status.DISCONNECTED			: { "text" : "Disconnected",		"color" : Color.RED },
+	ConnectionEvents.Status.CONNECTING : {
+		"text" : "Connecting...",
+		"color" : Color.YELLOW
+	},
+	ConnectionEvents.Status.FAILED_TO_CONNECT : {
+		"text" : "Failed to connect",
+		"color" : Color.RED
+	},
+	ConnectionEvents.Status.CONNECTED : { "text" : "Connected", "color" : Color.GREEN },
+	ConnectionEvents.Status.DISCONNECTED : { "text" : "Disconnected", "color" : Color.RED },
 }
 
+@export var connection_events: ConnectionEvents
 @export var label: Label
 @export var panel: PanelContainer
 @export var animation: AnimationPlayer
@@ -21,12 +27,13 @@ const status_body = {
 var queue_timer: Timer
 var hide_timer: Timer
 
-var current_status: Status
-var next_status: Status
+var current_status: ConnectionEvents.Status
+var next_status: ConnectionEvents.Status
 var just_changed: bool
 
 
 func _ready() -> void:
+	connection_events.status_changed.connect(set_status)
 	animation.play(HIDE, -1, 1, true)
 	
 	hide_timer = Timer.new()
@@ -38,7 +45,7 @@ func _ready() -> void:
 	add_child(queue_timer)
 
 
-func set_status(status : Status) -> void:
+func set_status(status : ConnectionEvents.Status) -> void:
 	next_status = status
 	
 	if not just_changed:
