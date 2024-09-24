@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cykcjgluho2ko"]
 
-[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_f1rcv"]
-[ext_resource type="Script" path="res://ui/help_text.gd" id="2_wr4ve"]
-[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="3_pbi6a"]
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_xvwmp"]
+[ext_resource type="Script" path="res://ui/chat/help_text.gd" id="2_jwt1o"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="3_v83rb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1jko0"]
-font = ExtResource("1_f1rcv")
+font = ExtResource("1_xvwmp")
 font_size = 22
 font_color = Color(1, 0.716667, 0, 1)
 
@@ -57,8 +57,8 @@ alignment = 2
 layout_mode = 2
 text = "If you cannot connect press 'H' to get help!"
 label_settings = SubResource("LabelSettings_1jko0")
-script = ExtResource("2_wr4ve")
-connection_events = ExtResource("3_pbi6a")
+script = ExtResource("2_jwt1o")
+connection_events = ExtResource("3_v83rb")
 help_link = "https://forms.gle/QVeuaiRA5kAzgR1W8"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
@@ -79,7 +79,7 @@ theme_override_constants/margin_right = 14
 [node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.556863)
-theme_override_fonts/font = ExtResource("1_f1rcv")
+theme_override_fonts/font = ExtResource("1_xvwmp")
 theme_override_font_sizes/font_size = 22
 text = "Text chat is work in progress..."
 vertical_alignment = 1

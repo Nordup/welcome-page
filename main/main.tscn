@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
-[ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://user_data/user_data_manager.tscn" id="3_rwvlu"]
+[ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://main/user_data/user_data_manager.tscn" id="3_rwvlu"]
 [ext_resource type="Script" path="res://levels/interactable/interactable_input_handler.gd" id="4_86hc2"]
 [ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
-[ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://player/player.tscn" id="5_wb2xi"]
+[ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
 [ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="6_p6o06"]
 [ext_resource type="Script" path="res://main/connection_manager.gd" id="6_snsvh"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
@@ -40,7 +40,6 @@ host = "95.163.240.240"
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 
 [node name="PlayerSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_points")]
-_spawnable_scenes = PackedStringArray("res://player/player.tscn")
 spawn_path = NodePath("../Players")
 script = ExtResource("4_edyrb")
 player_scene = ExtResource("5_wb2xi")

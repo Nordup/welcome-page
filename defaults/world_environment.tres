@@ -1,10 +1,10 @@
 [gd_resource type="Environment" load_steps=2 format=3 uid="uid://cgqlrwpgos8m3"]
 
-[ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://defaults/sky/blue_sky.tres" id="1_x1dgc"]
+[ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://defaults/blue_sky.tres" id="1_6v7xd"]
 
 [resource]
 background_mode = 2
-sky = ExtResource("1_x1dgc")
+sky = ExtResource("1_6v7xd")
 ambient_light_color = Color(0.0313726, 0.317647, 0.4, 1)
 ambient_light_sky_contribution = 0.53
 ambient_light_energy = 3.0

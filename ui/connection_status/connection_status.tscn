@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bb77fqgrkkjg5"]
 
-[ext_resource type="Script" path="res://ui/connection_status.gd" id="1_fbogt"]
+[ext_resource type="Script" path="res://ui/connection_status/connection_status.gd" id="1_fbogt"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="2_k7tqu"]
 [ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="2_pl3nx"]
 
