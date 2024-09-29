@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=15 format=3 uid="uid://mqnlrs6hn6g6"]
 
 [ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
+[ext_resource type="Script" path="res://main/chat/chat.gd" id="5_tb3oc"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
+[ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="6_apsyc"]
 [ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="6_p6o06"]
 [ext_resource type="Script" path="res://main/connection_manager.gd" id="6_snsvh"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
@@ -26,6 +28,10 @@ events = ExtResource("5_irmxe")
 
 [node name="UserDataManager" parent="Independents" instance=ExtResource("3_rwvlu")]
 
+[node name="Chat" type="Node" parent="Independents"]
+script = ExtResource("5_tb3oc")
+chat_events = ExtResource("6_apsyc")
+
 [node name="ConnectionManager" type="Node" parent="." node_paths=PackedStringArray("connection")]
 script = ExtResource("6_snsvh")
 connection = NodePath("Connection")
@@ -36,6 +42,7 @@ script = ExtResource("1_hlrxf")
 port = 56612
 max_clients = 256
 host = "95.163.240.240"
+use_localhost_in_editor = true
 
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 
