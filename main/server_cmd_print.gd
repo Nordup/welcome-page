@@ -6,4 +6,3 @@ func _run():
 	var project = ProjectSettings.globalize_path("res://")
 	var cmd = "%s --path %s --server --headless" % [godot, project]
 	print(cmd)
-											

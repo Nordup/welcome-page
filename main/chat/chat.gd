@@ -7,14 +7,14 @@ func _ready() -> void:
 	chat_events.send_message.connect(send_message)
 
 
-func send_message(text: String) -> void:
+func send_message(username: String, text: String) -> void:
 	if text.is_empty(): return
 	print("sending: " + text)
-	receive_message.rpc(multiplayer.get_unique_id(), text)
+	receive_message.rpc(multiplayer.get_unique_id(), username, text)
 
 
 @rpc("any_peer", "call_local", "reliable")
-func receive_message(id: int, text: String) -> void:
-	print(str(id) + " " + text)
+func receive_message(id: int, username: String, text: String) -> void:
+	print(username + ": " + text)
 	if Connection.is_server(): return
-	chat_events.receive_message_emit(id, text)
+	chat_events.receive_message_emit(id, username, text)

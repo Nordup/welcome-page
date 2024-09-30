@@ -120,9 +120,12 @@ theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("1_xvwmp")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_fjla7")
-placeholder_text = "Press 'Enter' to chat"
+theme_override_styles/read_only = SubResource("StyleBoxFlat_fjla7")
+placeholder_text = "Wait for connection to chat"
+editable = false
 script = ExtResource("4_gow1v")
 chat_events = ExtResource("5_5ehaj")
+connection_events = ExtResource("3_v83rb")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0.784314)
