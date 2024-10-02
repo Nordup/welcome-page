@@ -57,9 +57,10 @@ offset_right = 332.0
 offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "WE COULDN'T CONNECT TO SERVER :(
+text = "WE COULDN'T CONNECT TO SERVER
 
 
+Many players can't connect
 Please help me understand why???
 
 Press 'H' to fill out google form and make sure to leave your email for contact
