@@ -22,7 +22,7 @@ const status_body = {
 @export var panel: PanelContainer
 @export var animation: AnimationPlayer
 @export var queue_delay: float = 1.5
-@export var hide_delay: float = 5.0
+@export var hide_delay: float = 10.0
 
 var queue_timer: Timer
 var hide_timer: Timer

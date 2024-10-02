@@ -17,7 +17,7 @@ func change_help_text(status : ConnectionEvents.Status) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("help"): return
-	if EditMode.is_enabled: return
+	if EditMode.is_enabled and not EditMode.is_connection_msg: return
 	
 	if get_tree().has_method("send_command"):
 		get_tree().send_command("open_link", [help_link])
