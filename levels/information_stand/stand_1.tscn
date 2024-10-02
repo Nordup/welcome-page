@@ -232,7 +232,7 @@ offset_bottom = 861.25
 theme_override_styles/panel = SubResource("StyleBoxFlat_fqt3l")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer2"]
-modulate = Color(0.980392, 0.980392, 0.980392, 0.909804)
+self_modulate = Color(0.920995, 0.920995, 0.920995, 1)
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 texture = ExtResource("7_vr7l2")

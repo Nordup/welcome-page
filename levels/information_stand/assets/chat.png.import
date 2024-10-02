@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddq8cl13065f0"
-path.s3tc="res://.godot/imported/world.png-128d0d3549ce4440a0755357a7304035.s3tc.ctex"
+uid="uid://c0lwgp3b58y5o"
+path.bptc="res://.godot/imported/chat.png-d7620150cf39fc214897b396ee1bb4b4.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://levels/information_stand/assets/world.png"
-dest_files=["res://.godot/imported/world.png-128d0d3549ce4440a0755357a7304035.s3tc.ctex"]
+source_file="res://levels/information_stand/assets/chat.png"
+dest_files=["res://.godot/imported/chat.png-d7620150cf39fc214897b396ee1bb4b4.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
