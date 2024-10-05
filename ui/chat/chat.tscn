@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_xvwmp"]
 [ext_resource type="Script" path="res://ui/chat/help_text.gd" id="2_jwt1o"]
 [ext_resource type="PackedScene" uid="uid://bc6oaxd1e2055" path="res://ui/chat/chat_message.tscn" id="3_2sdal"]
-[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="3_v83rb"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection/connection_events.res" id="3_v83rb"]
 [ext_resource type="Script" path="res://ui/chat/chat_input.gd" id="4_gow1v"]
 [ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="5_5ehaj"]
 [ext_resource type="Texture2D" uid="uid://bmqi2ua7oxy8u" path="res://ui/chat/enter-key.png" id="8_kp1p0"]

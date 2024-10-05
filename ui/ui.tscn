@@ -42,4 +42,5 @@ grow_vertical = 0
 layout_mode = 1
 
 [node name="ConnectionFail" parent="." instance=ExtResource("5_scdhw")]
+visible = false
 layout_mode = 1

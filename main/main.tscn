@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://mqnlrs6hn6g6"]
 
-[ext_resource type="Script" path="res://main/connection.gd" id="1_hlrxf"]
+[ext_resource type="Script" path="res://main/connection/connection.gd" id="1_hlrxf"]
 [ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
 [ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://main/user_data/user_data_manager.tscn" id="3_rwvlu"]
 [ext_resource type="Script" path="res://levels/interactable/interactable_input_handler.gd" id="4_86hc2"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" path="res://main/chat/chat.gd" id="5_tb3oc"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
 [ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="6_apsyc"]
-[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection_events.res" id="6_p6o06"]
-[ext_resource type="Script" path="res://main/connection_manager.gd" id="6_snsvh"]
+[ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection/connection_events.res" id="6_p6o06"]
+[ext_resource type="Script" path="res://main/connection/connection_manager.gd" id="6_snsvh"]
 [ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
 [ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
 

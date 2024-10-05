@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://d3ougjr7jxnnt"]
+[gd_scene load_steps=95 format=3 uid="uid://d3ougjr7jxnnt"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="3_7uq64"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="3_ftqdc"]
@@ -69,6 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://dqcxpybuccrj6" path="res://addons/kenney_nature-kit/tree_thin_fall.glb" id="91_oxiur"]
 [ext_resource type="PackedScene" uid="uid://mh5i0yqse2pa" path="res://addons/kenney_nature-kit/campfire_planks.glb" id="92_wnedr"]
 [ext_resource type="PackedScene" uid="uid://qn2edmqy452y" path="res://addons/kenney_nature-kit/rock_tallB.glb" id="93_y3vvo"]
+[ext_resource type="PackedScene" uid="uid://b0c8n3affoiyu" path="res://levels/gate_terminal/gate_terminal.tscn" id="94_gbrr6"]
 [ext_resource type="PackedScene" uid="uid://bi55lre6o367h" path="res://addons/kenney_nature-kit/ground_riverCorner.glb" id="94_sk2ej"]
 [ext_resource type="PackedScene" uid="uid://bva637gqxntox" path="res://addons/kenney_nature-kit/ground_riverSide.glb" id="95_4moc5"]
 [ext_resource type="PackedScene" uid="uid://25hg7w72y8n4" path="res://addons/kenney_nature-kit/stone_tallE.glb" id="96_63k36"]
@@ -153,6 +154,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0346, 2.6999, 67.6527)
 [node name="SpawnPoint7" parent="SpawnPoints" instance=ExtResource("3_ftqdc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7578, 2.69988, 67.5983)
 
+[node name="GateTerminal" parent="." instance=ExtResource("94_gbrr6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -48.1728, -1.2, 49.8273)
+
 [node name="Portals" type="Node3D" parent="."]
 
 [node name="Portal2" parent="Portals" instance=ExtResource("7_hrjno")]
@@ -219,6 +223,7 @@ transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.744
 
 [node name="Portal6" parent="Portals" instance=ExtResource("7_hrjno")]
 transform = Transform3D(-0.10991, 0, 1.49597, 0, 1.5, 0, -1.49597, 0, -0.10991, -54.1026, -1.19041, 43.6096)
+visible = false
 url = "godot_open_rts.gate"
 
 [node name="Sprite3D" parent="Portals/Portal6" index="2"]
