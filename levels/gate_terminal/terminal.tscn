@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2a4xmbiose6y"]
+[gd_scene load_steps=11 format=3 uid="uid://d2a4xmbiose6y"]
 
+[ext_resource type="Script" path="res://levels/gate_terminal/terminal_info.gd" id="1_8ft2s"]
 [ext_resource type="Texture2D" uid="uid://w7gbua7abmx3" path="res://levels/gates_icons/gdquest_demo.png" id="1_da2l3"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_jwipc"]
 [ext_resource type="FontFile" uid="uid://bieguuna7y5ev" path="res://addons/thegates_export/fonts/Inter-Regular.otf" id="3_ejgqk"]
@@ -20,7 +21,7 @@ font = ExtResource("1_jwipc")
 font_size = 100
 font_color = Color(0, 0.368627, 1, 1)
 
-[node name="Terminal" type="Control"]
+[node name="Terminal" type="Control" node_paths=PackedStringArray("image_texture", "title_label", "desc_rich")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,6 +34,10 @@ offset_right = 1000.0
 offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ft2s")
+image_texture = NodePath("MarginContainer/HBoxContainer/Panel2/TextureRect")
+title_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label")
+desc_rich = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label2")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

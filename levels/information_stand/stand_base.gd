@@ -1,5 +1,6 @@
 @tool
 extends Node3D
+class_name StandBase
 
 @export var viewport: SubViewport
 @export var mesh: MeshInstance3D
@@ -9,18 +10,19 @@ var mesh_copy: MeshInstance3D
 
 
 func _enter_tree() -> void:
-	start()
+	render()
 
 
 func _exit_tree() -> void:
-	stop()
+	clear()
 
 
-func start() -> void:
+func render() -> void:
 	if Connection.is_server(): return
 	if not is_instance_valid(viewport): return
 	if viewport == null: return
 	
+	clear()
 	mesh.visible = false
 	
 	mesh_copy = mesh.duplicate() as MeshInstance3D
@@ -28,6 +30,9 @@ func start() -> void:
 	mesh_copy.material_override = mesh_copy.material_override.duplicate(true)
 	(mesh_copy.material_override as StandardMaterial3D).albedo_texture = viewport.get_texture()
 	add_child(mesh_copy)
+	
+	# Force to update
+	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	
 	# Wait viewport to draw
 	var scene_tree = get_tree()
@@ -44,7 +49,7 @@ func start() -> void:
 	try_print(name + " mesh copy displayed")
 
 
-func stop() -> void:
+func clear() -> void:
 	mesh.visible = true
 	
 	if is_instance_valid(mesh_copy):

@@ -1,11 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0c8n3affoiyu"]
+[gd_scene load_steps=10 format=3 uid="uid://b0c8n3affoiyu"]
 
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="1_8xacv"]
 [ext_resource type="PackedScene" uid="uid://d2a4xmbiose6y" path="res://levels/gate_terminal/terminal.tscn" id="2_57xik"]
 [ext_resource type="Script" path="res://levels/information_stand/stand_base.gd" id="3_srxp5"]
-[ext_resource type="Texture2D" uid="uid://minin48agii4" path="res://levels/information_stand/light.png" id="4_ugv1x"]
-[ext_resource type="PackedScene" uid="uid://dqebjueaid1mu" path="res://addons/kenney_nature-kit/statue_block.glb" id="5_yof4s"]
-[ext_resource type="Material" uid="uid://b1v5o01sdecwv" path="res://levels/information_stand/corner.material" id="6_yr7ji"]
 [ext_resource type="PackedScene" uid="uid://dyxmic7x1slh6" path="res://addons/kenney_nature-kit/statue_column.glb" id="7_x65ce"]
 [ext_resource type="PackedScene" uid="uid://b5ot2xc1qqau7" path="res://levels/interactable/base/interactable_base.tscn" id="8_xw6kf"]
 
@@ -23,20 +20,32 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xb8l"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.12549)
-albedo_texture = ExtResource("4_ugv1x")
+[sub_resource type="GDScript" id="GDScript_fxsmk"]
+script/source = "extends Node
 
-[sub_resource type="QuadMesh" id="QuadMesh_53hhs"]
-size = Vector2(3.745, 2)
+@export var url: String
+@export var portal: Portal
+@export var terminal_info: TerminalInfo
+@export var stand: StandBase
+
+
+func _ready() -> void:
+	set_gate_run()
+
+
+func set_gate_run() -> void:
+	portal.url = url
+	terminal_info.set_info(url)
+	
+	await terminal_info.on_info_set
+	stand.render()
+"
 
 [node name="GateTerminal" type="Node3D"]
 
 [node name="Portal" parent="." instance=ExtResource("1_8xacv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+url = "https://thegates.io/worlds/solar_system.gate"
 
 [node name="Sprite3D" parent="Portal" index="2"]
 visible = false
@@ -60,6 +69,7 @@ mesh = NodePath("Mesh")
 
 [node name="Mesh" type="MeshInstance3D" parent="StandBase2"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 2.98023e-08, 8.74228e-08, 2.98023e-08, -1, 0, 6.4668, -2.83874)
+visible = false
 material_override = SubResource("StandardMaterial3D_mkbvw")
 mesh = SubResource("QuadMesh_l4ntv")
 
@@ -68,203 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 6.466
 material_override = SubResource("StandardMaterial3D_5gau4")
 mesh = SubResource("QuadMesh_l4ntv")
 
-[node name="Corner" type="Node3D" parent="StandBase2"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, -1.49012e-08, 0, 1.49012e-08, 0.5, 5.58472, 3.25304, -2.83874)
-visible = false
-
-[node name="Node3D2" type="Node3D" parent="StandBase2/Corner"]
-transform = Transform3D(-8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0, 2, 0.259881, 0.20635, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StandBase2/Corner/Node3D2"]
-transform = Transform3D(-0.292372, -0.956305, 0, 0.956305, -0.292372, 0, 0, 0, 1, -0.449358, -2.57765, -0.00304413)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StandBase2/Corner/Node3D2"]
-transform = Transform3D(0.951056, -0.309017, 8.74228e-08, -0.309017, -0.951056, 0, 8.3144e-08, -2.70151e-08, -1, -2.489, -0.57, -0.003)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="statue_block2" parent="StandBase2/Corner" instance=ExtResource("5_yof4s")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="statue_block" parent="StandBase2/Corner/statue_block2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
-disabled = true
-
-[node name="statue_column2" parent="StandBase2/Corner" instance=ExtResource("7_x65ce")]
-transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, -0.413953, 0.300688, 0)
-
-[node name="statue_column" parent="StandBase2/Corner/statue_column2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="statue_column3" parent="StandBase2/Corner" instance=ExtResource("7_x65ce")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
-
-[node name="statue_column" parent="StandBase2/Corner/statue_column3/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="Corner2" type="Node3D" parent="StandBase2"]
-transform = Transform3D(0.5, 0, 0, 0, -0.5, -1.49012e-08, 0, 1.49012e-08, -0.5, 5.585, 9.69418, -2.83874)
-visible = false
-
-[node name="Node3D" type="Node3D" parent="StandBase2/Corner2"]
-transform = Transform3D(2, 0, 0, 0, -2, 1.74846e-07, 0, -1.74846e-07, -2, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StandBase2/Corner2/Node3D"]
-transform = Transform3D(-0.292372, -0.956305, 0, 0.956305, -0.292372, 0, 0, 0, 1, -0.449358, -2.57765, -0.00304413)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StandBase2/Corner2/Node3D"]
-transform = Transform3D(0.951056, -0.309017, 8.74228e-08, -0.309017, -0.951056, 0, 8.3144e-08, -2.70151e-08, -1, -2.489, -0.57, -0.003)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="statue_block2" parent="StandBase2/Corner2" instance=ExtResource("5_yof4s")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="statue_block" parent="StandBase2/Corner2/statue_block2/tmpParent" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.200001, 0)
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner2/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
-disabled = true
-
-[node name="statue_column2" parent="StandBase2/Corner2" instance=ExtResource("7_x65ce")]
-transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, -0.413953, 0.300688, 0)
-
-[node name="statue_column" parent="StandBase2/Corner2/statue_column2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner2/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="statue_column3" parent="StandBase2/Corner2" instance=ExtResource("7_x65ce")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
-
-[node name="statue_column" parent="StandBase2/Corner2/statue_column3/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner2/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="Corner3" type="Node3D" parent="StandBase2"]
-transform = Transform3D(-0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, -1.49012e-08, 0, -1.49012e-08, 0.5, -5.54494, 9.69378, -2.83874)
-visible = false
-
-[node name="Node3D2" type="Node3D" parent="StandBase2/Corner3"]
-transform = Transform3D(-8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0, 2, 0.235192, 0.309862, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StandBase2/Corner3/Node3D2"]
-transform = Transform3D(-0.292372, -0.956305, 0, 0.956305, -0.292372, 0, 0, 0, 1, -0.449358, -2.57765, -0.00304413)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StandBase2/Corner3/Node3D2"]
-transform = Transform3D(0.951056, -0.309017, 8.74228e-08, -0.309017, -0.951056, 0, 8.3144e-08, -2.70151e-08, -1, -2.489, -0.57, -0.003)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="statue_block2" parent="StandBase2/Corner3" instance=ExtResource("5_yof4s")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="statue_block" parent="StandBase2/Corner3/statue_block2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner3/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
-disabled = true
-
-[node name="statue_column2" parent="StandBase2/Corner3" instance=ExtResource("7_x65ce")]
-transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, -0.413953, 0.300688, 0)
-
-[node name="statue_column" parent="StandBase2/Corner3/statue_column2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner3/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="statue_column3" parent="StandBase2/Corner3" instance=ExtResource("7_x65ce")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
-
-[node name="statue_column" parent="StandBase2/Corner3/statue_column3/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner3/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="Corner4" type="Node3D" parent="StandBase2"]
-transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 1.49012e-08, -4.37114e-08, 1.49012e-08, -0.5, -5.545, 3.25278, -2.83874)
-visible = false
-
-[node name="Node3D2" type="Node3D" parent="StandBase2/Corner4"]
-transform = Transform3D(2, 1.74846e-07, 1.74846e-07, 1.74846e-07, -2, 0, 1.74846e-07, 1.52855e-14, -2, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StandBase2/Corner4/Node3D2"]
-transform = Transform3D(-0.292372, -0.956305, 0, 0.956305, -0.292372, 0, 0, 0, 1, -0.449358, -2.57765, -0.00304413)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StandBase2/Corner4/Node3D2"]
-transform = Transform3D(0.951056, -0.309017, 8.74228e-08, -0.309017, -0.951056, 0, 8.3144e-08, -2.70151e-08, -1, -2.489, -0.57, -0.003)
-material_override = SubResource("StandardMaterial3D_2xb8l")
-mesh = SubResource("QuadMesh_53hhs")
-skeleton = NodePath("../../..")
-
-[node name="statue_block2" parent="StandBase2/Corner4" instance=ExtResource("5_yof4s")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="statue_block" parent="StandBase2/Corner4/statue_block2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner4/statue_block2/tmpParent/statue_block/statue_block_col" index="0"]
-disabled = true
-
-[node name="statue_column2" parent="StandBase2/Corner4" instance=ExtResource("7_x65ce")]
-transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, -0.413953, 0.300688, 0)
-
-[node name="statue_column" parent="StandBase2/Corner4/statue_column2/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner4/statue_column2/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
-[node name="statue_column3" parent="StandBase2/Corner4" instance=ExtResource("7_x65ce")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.714, 0)
-
-[node name="statue_column" parent="StandBase2/Corner4/statue_column3/tmpParent" index="0"]
-material_override = ExtResource("6_yr7ji")
-cast_shadow = 0
-
-[node name="CollisionShape3D" parent="StandBase2/Corner4/statue_column3/tmpParent/statue_column/statue_column_col" index="0"]
-disabled = true
-
 [node name="statue_column2" parent="." instance=ExtResource("7_x65ce")]
 transform = Transform3D(0.499615, 0, 0, 0, 0.499615, 0, 0, 0, 0.499615, -4.87384, 0, 0)
 
@@ -272,16 +85,11 @@ transform = Transform3D(0.499615, 0, 0, 0, 0.499615, 0, 0, 0, 0.499615, -4.87384
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87384, 0, -2)
 text = "Choose gate"
 
+[node name="TmpRunner" type="Node" parent="." node_paths=PackedStringArray("portal", "terminal_info", "stand")]
+script = SubResource("GDScript_fxsmk")
+url = "https://thegates.io/worlds/world.gate"
+portal = NodePath("../Portal")
+terminal_info = NodePath("../SubViewport/Terminal")
+stand = NodePath("../StandBase2")
+
 [editable path="Portal"]
-[editable path="StandBase2/Corner/statue_block2"]
-[editable path="StandBase2/Corner/statue_column2"]
-[editable path="StandBase2/Corner/statue_column3"]
-[editable path="StandBase2/Corner2/statue_block2"]
-[editable path="StandBase2/Corner2/statue_column2"]
-[editable path="StandBase2/Corner2/statue_column3"]
-[editable path="StandBase2/Corner3/statue_block2"]
-[editable path="StandBase2/Corner3/statue_column2"]
-[editable path="StandBase2/Corner3/statue_column3"]
-[editable path="StandBase2/Corner4/statue_block2"]
-[editable path="StandBase2/Corner4/statue_column2"]
-[editable path="StandBase2/Corner4/statue_column3"]
