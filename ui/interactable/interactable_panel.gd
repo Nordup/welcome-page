@@ -24,19 +24,24 @@ func on_interactable_entered(text: String, interactable: InteractableBase) -> vo
 	current = interactable
 	
 	label.text = text
-	animation.play(SHOW)
+	play_cached(SHOW)
 
 
 func on_interactable_exited(interactable: InteractableBase) -> void:
 	if interactable != current: return
 	current = null
 	
-	animation.play(HIDE)
+	play_cached(HIDE)
 
 
 func on_interactable_blocked(interactable: InteractableBase) -> void:
-	if current == interactable: animation.play(HIDE)
+	if is_instance_valid(current) and current == interactable: play_cached(HIDE)
 
 
 func on_interactable_unblocked(interactable: InteractableBase) -> void:
-	if current == interactable: animation.play(SHOW)
+	if is_instance_valid(current) and current == interactable: play_cached(SHOW)
+
+
+func play_cached(animation_name: String) -> void:
+	if animation.assigned_animation == animation_name: return
+	animation.play(animation_name)

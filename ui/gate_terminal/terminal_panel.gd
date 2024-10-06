@@ -30,10 +30,10 @@ func on_interactable_entered(_text: String, interactable: InteractableBase) -> v
 func on_interactable_exited(interactable: InteractableBase) -> void:
 	if interactable != current: return
 	
+	hide_panel()
+	
 	current.on_interact.disconnect(show_panel)
 	current = null
-	
-	hide_panel()
 
 
 func show_panel() -> void:
