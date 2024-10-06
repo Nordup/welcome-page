@@ -2,31 +2,37 @@ extends Control
 class_name TerminalPanel
 
 @export var root: TextureButton
-@export var events: TerminalEvents
+@export var interactable_events: InteractableEvents
 @export var mouse_pos: Control
 @export var mouse_mode: MouseMode
-#@export var finder: Control
 
 var current: InteractableTerminal
 
 
 func _ready() -> void:
-	events.on_entered.connect(on_terminal_entered)
-	events.on_exited.connect(on_terminal_exited)
+	interactable_events.on_entered.connect(on_interactable_entered)
+	interactable_events.on_exited.connect(on_interactable_exited)
 	root.pressed.connect(hide_panel)
 	
 	visible = true
 	root.hide()
 
 
-func on_terminal_entered(terminal: InteractableTerminal) -> void:
-	current = terminal
+func on_interactable_entered(_text: String, interactable: InteractableBase) -> void:
+	if not interactable is InteractableTerminal: return
+	
+	current = interactable
+	current.on_interact.connect(show_panel)
+	
 	show_panel()
 
 
-func on_terminal_exited(terminal: InteractableTerminal) -> void:
-	if terminal != current: return
+func on_interactable_exited(interactable: InteractableBase) -> void:
+	if interactable != current: return
+	
+	current.on_interact.disconnect(show_panel)
 	current = null
+	
 	hide_panel()
 
 
@@ -39,6 +45,8 @@ func show_panel() -> void:
 		mouse_mode.set_captured(false)
 		var viewport_scale = Vector2(get_viewport().size) / size
 		Input.warp_mouse(mouse_pos.global_position * viewport_scale)
+	
+	interactable_events.on_blocked_emit(current)
 
 
 func hide_panel() -> void:
@@ -47,6 +55,8 @@ func hide_panel() -> void:
 	root.hide()
 	EditMode.set_show_mouse(false)
 	if is_instance_valid(mouse_mode): mouse_mode.set_captured(true)
+	
+	interactable_events.on_unblocked_emit(current)
 
 
 func load_gate(url: String) -> void:

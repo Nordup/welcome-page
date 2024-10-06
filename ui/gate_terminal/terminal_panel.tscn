@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://byfgsmntqeuj2"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
-[ext_resource type="Resource" uid="uid://hbqqo5hux35j" path="res://levels/gate_terminal/terminal_events.res" id="2_tnjil"]
+[ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
 [ext_resource type="Script" path="res://ui/gate_terminal/Button.gd" id="3_sn47b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fkfb"]
@@ -17,7 +17,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_c4msa")
 root = NodePath("Control")
-events = ExtResource("2_tnjil")
+interactable_events = ExtResource("2_h6a4l")
 mouse_pos = NodePath("Control/MarginContainer/MousePosition")
 
 [node name="Control" type="TextureButton" parent="."]

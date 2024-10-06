@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4tamnft4jibh"]
+[gd_scene load_steps=3 format=3 uid="uid://c4tamnft4jibh"]
 
 [ext_resource type="PackedScene" uid="uid://b5ot2xc1qqau7" path="res://levels/interactable/base/interactable_base.tscn" id="1_dl77i"]
 [ext_resource type="Script" path="res://levels/interactable/interactable_terminal.gd" id="2_6m0w2"]
-[ext_resource type="Resource" uid="uid://hbqqo5hux35j" path="res://levels/gate_terminal/terminal_events.res" id="3_rxt4t"]
 
 [node name="InteractableTerminal" instance=ExtResource("1_dl77i")]
 script = ExtResource("2_6m0w2")
-terminal_events = ExtResource("3_rxt4t")
