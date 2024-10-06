@@ -1,10 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0c8n3affoiyu"]
 
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="1_8xacv"]
+[ext_resource type="Script" path="res://levels/gate_terminal/gate_terminal.gd" id="1_36vgj"]
 [ext_resource type="PackedScene" uid="uid://d2a4xmbiose6y" path="res://levels/gate_terminal/terminal.tscn" id="2_57xik"]
 [ext_resource type="Script" path="res://levels/information_stand/stand_base.gd" id="3_srxp5"]
+[ext_resource type="PackedScene" uid="uid://c4tamnft4jibh" path="res://levels/interactable/interactable_terminal.tscn" id="7_hnqun"]
 [ext_resource type="PackedScene" uid="uid://dyxmic7x1slh6" path="res://addons/kenney_nature-kit/statue_column.glb" id="7_x65ce"]
-[ext_resource type="PackedScene" uid="uid://b5ot2xc1qqau7" path="res://levels/interactable/base/interactable_base.tscn" id="8_xw6kf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkbvw"]
 resource_local_to_scene = true
@@ -20,28 +21,12 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
-[sub_resource type="GDScript" id="GDScript_fxsmk"]
-script/source = "extends Node
-
-@export var url: String
-@export var portal: Portal
-@export var terminal_info: TerminalInfo
-@export var stand: StandBase
-
-
-func _ready() -> void:
-	set_gate_run()
-
-
-func set_gate_run() -> void:
-	portal.url = url
-	terminal_info.set_info(url)
-	
-	await terminal_info.on_info_set
-	stand.render()
-"
-
-[node name="GateTerminal" type="Node3D"]
+[node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("portal", "terminal_info", "stand")]
+script = ExtResource("1_36vgj")
+url = "https://thegates.io/worlds/devs/snap_games_studio/conquestor.gate"
+portal = NodePath("Portal")
+terminal_info = NodePath("SubViewport/Terminal")
+stand = NodePath("StandBase2")
 
 [node name="Portal" parent="." instance=ExtResource("1_8xacv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -69,7 +54,6 @@ mesh = NodePath("Mesh")
 
 [node name="Mesh" type="MeshInstance3D" parent="StandBase2"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 2.98023e-08, 8.74228e-08, 2.98023e-08, -1, 0, 6.4668, -2.83874)
-visible = false
 material_override = SubResource("StandardMaterial3D_mkbvw")
 mesh = SubResource("QuadMesh_l4ntv")
 
@@ -81,15 +65,8 @@ mesh = SubResource("QuadMesh_l4ntv")
 [node name="statue_column2" parent="." instance=ExtResource("7_x65ce")]
 transform = Transform3D(0.499615, 0, 0, 0, 0.499615, 0, 0, 0, 0.499615, -4.87384, 0, 0)
 
-[node name="InteractableBase" parent="." instance=ExtResource("8_xw6kf")]
+[node name="InteractableTerminal" parent="." instance=ExtResource("7_hnqun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87384, 0, -2)
 text = "Choose gate"
-
-[node name="TmpRunner" type="Node" parent="." node_paths=PackedStringArray("portal", "terminal_info", "stand")]
-script = SubResource("GDScript_fxsmk")
-url = "https://thegates.io/worlds/world.gate"
-portal = NodePath("../Portal")
-terminal_info = NodePath("../SubViewport/Terminal")
-stand = NodePath("../StandBase2")
 
 [editable path="Portal"]

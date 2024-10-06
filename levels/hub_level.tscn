@@ -2599,6 +2599,9 @@ transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 40.
 [node name="platform6" parent="Env" instance=ExtResource("6_u6652")]
 transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 44.5905)
 
+[node name="GateTerminal2" parent="." instance=ExtResource("94_gbrr6")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -40.4985, 2.6999, 60.3389)
+
 [editable path="Portals/Portal2"]
 [editable path="Portals/Portal3"]
 [editable path="Portals/Portal4"]

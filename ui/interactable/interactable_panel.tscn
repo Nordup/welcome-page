@@ -99,11 +99,15 @@ _data = {
 
 [node name="Interactable" type="Control" node_paths=PackedStringArray("label", "animation")]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -382.0
+offset_top = -168.0
+grow_horizontal = 0
+grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("1_8ffj1")
 events = ExtResource("2_k6kka")

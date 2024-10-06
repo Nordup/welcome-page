@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://byfgsmntqeuj2"]
+
+[ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
+[ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
+
+[node name="TerminalPanel" type="Control" node_paths=PackedStringArray("root", "mouse_pos")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c4msa")
+root = NodePath("Control")
+events = ExtResource("2_h6a4l")
+mouse_pos = NodePath("Control/MarginContainer/MousePosition")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -500.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MousePosition" type="Control" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer"]
+layout_mode = 2

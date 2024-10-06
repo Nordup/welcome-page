@@ -1,4 +1,5 @@
 extends Control
+class_name MouseMode
 
 var is_in_game: bool
 

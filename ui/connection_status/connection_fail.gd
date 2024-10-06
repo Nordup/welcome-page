@@ -28,6 +28,7 @@ func status_changed(status : ConnectionEvents.Status) -> void:
 
 
 func show_message_after_delay() -> void:
+	visible = true
 	root.hide()
 	root.modulate = HIDDEN
 	root.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -37,7 +38,7 @@ func show_message_after_delay() -> void:
 	
 	show_message()
 
-						
+
 func _input(event: InputEvent) -> void:
 	if not root.visible: return
 	if not event.is_action_pressed("skip"): return

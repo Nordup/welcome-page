@@ -5,7 +5,10 @@ signal on_info_set()
 
 @export var image_texture: TextureRect
 @export var title_label: Label
-@export var desc_rich: RichTextLabel
+@export var desc_one: RichTextLabel
+@export var desc_two: RichTextLabel
+
+var current_desc: RichTextLabel
 
 
 func set_info(gate_url: String) -> void:
@@ -14,9 +17,20 @@ func set_info(gate_url: String) -> void:
 	
 	var c_gate = ConfigGate.new(config_path, gate_url)
 	title_label.text = c_gate.title
-	desc_rich.text = c_gate.description
+	set_desc(c_gate.description)
 	
 	var image_path = await FileDownloader.download(c_gate.image_url)
 	image_texture.texture = FileTools.load_external_tex(image_path)
 	
 	on_info_set.emit()
+
+
+func set_desc(text: String) -> void:
+	desc_one.visible = false
+	desc_two.visible = false
+	
+	var lines = title_label.get_line_count()
+	current_desc = desc_one if lines == 1 else desc_two
+	
+	current_desc.visible = true
+	current_desc.text = text
