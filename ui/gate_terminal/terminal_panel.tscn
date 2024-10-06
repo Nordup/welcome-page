@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://byfgsmntqeuj2"]
+[gd_scene load_steps=5 format=3 uid="uid://byfgsmntqeuj2"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
-[ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
+[ext_resource type="Resource" uid="uid://hbqqo5hux35j" path="res://levels/gate_terminal/terminal_events.res" id="2_tnjil"]
+[ext_resource type="Script" path="res://ui/gate_terminal/Button.gd" id="3_sn47b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fkfb"]
+bg_color = Color(1, 1, 1, 0.643137)
 
 [node name="TerminalPanel" type="Control" node_paths=PackedStringArray("root", "mouse_pos")]
 layout_mode = 3
@@ -13,10 +17,10 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_c4msa")
 root = NodePath("Control")
-events = ExtResource("2_h6a4l")
+events = ExtResource("2_tnjil")
 mouse_pos = NodePath("Control/MarginContainer/MousePosition")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +37,7 @@ anchor_bottom = 1.0
 offset_left = -500.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 0
 
 [node name="MousePosition" type="Control" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -41,3 +46,17 @@ size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="Control/MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0fkfb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("panel", "line_edit")]
+layout_mode = 2
+text = "Load gate!"
+script = ExtResource("3_sn47b")
+panel = NodePath("../../../..")
+line_edit = NodePath("../LineEdit")

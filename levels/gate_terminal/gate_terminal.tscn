@@ -21,16 +21,15 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
-[node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("portal", "terminal_info", "stand")]
+[node name="GateTerminal" type="Node3D" node_paths=PackedStringArray("interactable", "terminal_info", "stand", "portal")]
 script = ExtResource("1_36vgj")
-url = "https://thegates.io/worlds/devs/snap_games_studio/conquestor.gate"
-portal = NodePath("Portal")
+interactable = NodePath("InteractableTerminal")
 terminal_info = NodePath("SubViewport/Terminal")
 stand = NodePath("StandBase2")
+portal = NodePath("Portal")
 
 [node name="Portal" parent="." instance=ExtResource("1_8xacv")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-url = "https://thegates.io/worlds/solar_system.gate"
 
 [node name="Sprite3D" parent="Portal" index="2"]
 visible = false
@@ -67,6 +66,5 @@ transform = Transform3D(0.499615, 0, 0, 0, 0.499615, 0, 0, 0, 0.499615, -4.87384
 
 [node name="InteractableTerminal" parent="." instance=ExtResource("7_hnqun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87384, 0, -2)
-text = "Choose gate"
 
 [editable path="Portal"]
