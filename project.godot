@@ -27,6 +27,7 @@ driver/mix_rate=48000
 [autoload]
 
 FileDownloader="*res://main/loading/file_downloader.gd"
+Backend="*res://main/backend/backend.gd"
 
 [display]
 
