@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://byfgsmntqeuj2"]
+[gd_scene load_steps=6 format=3 uid="uid://byfgsmntqeuj2"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
 [ext_resource type="Script" path="res://ui/gate_terminal/search_results.gd" id="3_hagb1"]
 [ext_resource type="Resource" uid="uid://df0pm2rdlwwy4" path="res://main/backend/api_settings.tres" id="4_ed4rc"]
 [ext_resource type="PackedScene" uid="uid://i3lgu2dyypcq" path="res://ui/gate_terminal/result.tscn" id="5_7sy3s"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fkfb"]
-bg_color = Color(1, 1, 1, 0.643137)
 
 [node name="TerminalPanel" type="Control" node_paths=PackedStringArray("root", "mouse_pos")]
 layout_mode = 3
@@ -36,23 +33,18 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -660.0
+offset_left = -560.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 0
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_bottom = 240
 
 [node name="MousePosition" type="Control" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="Panel" type="Panel" parent="Control/MarginContainer"]
-visible = false
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0fkfb")
 
 [node name="Control" type="Control" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -71,6 +63,7 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 script = ExtResource("3_hagb1")
 exclude_url = "https://thegates.io/worlds/world.gate"
 api = ExtResource("4_ed4rc")

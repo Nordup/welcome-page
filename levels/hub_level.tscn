@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://d3ougjr7jxnnt"]
+[gd_scene load_steps=94 format=3 uid="uid://d3ougjr7jxnnt"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="3_7uq64"]
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="3_ftqdc"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://ci70onah2w3b5" path="res://levels/gates_icons/sketchy_render.png" id="8_2qs3l"]
 [ext_resource type="Texture2D" uid="uid://bbeapq20uqyec" path="res://levels/gates_icons/gdquest_godot4_demos.png" id="9_pxk0f"]
 [ext_resource type="Texture2D" uid="uid://w7gbua7abmx3" path="res://levels/gates_icons/gdquest_demo.png" id="10_u86pi"]
-[ext_resource type="Texture2D" uid="uid://fn0ek1apjx0w" path="res://levels/gates_icons/godot_open_rts.png" id="11_xcxeu"]
 [ext_resource type="Texture2D" uid="uid://dn16u2j31ra3q" path="res://levels/gates_icons/godot_platformer.png" id="12_ydmax"]
 [ext_resource type="PackedScene" uid="uid://r111r3yggait" path="res://addons/kenney_nature-kit/cliff_blockQuarter_rock.glb" id="16_xgy8j"]
 [ext_resource type="PackedScene" uid="uid://dnhwc144rnivm" path="res://addons/kenney_nature-kit/cliff_blockSlope_rock.glb" id="17_31afh"]
@@ -130,6 +129,10 @@ font_size = 152
 [node name="InformationStand" parent="." instance=ExtResource("3_g5rb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.2073, -1.1, 67.3759)
 
+[node name="GateTerminal" parent="." instance=ExtResource("94_gbrr6")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -39.828, 2.6999, 54.1209)
+start_url = "https://thegates.io/worlds/devs/snap_games_studio/packing_frenzy.gate"
+
 [node name="SpawnPoints" type="Node3D" parent="."]
 script = ExtResource("5_whw28")
 
@@ -153,9 +156,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0346, 2.6999, 67.6527)
 
 [node name="SpawnPoint7" parent="SpawnPoints" instance=ExtResource("3_ftqdc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.7578, 2.69988, 67.5983)
-
-[node name="GateTerminal" parent="." instance=ExtResource("94_gbrr6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -48.1728, -1.2, 49.8273)
 
 [node name="Portals" type="Node3D" parent="."]
 
@@ -220,22 +220,6 @@ url = "starcatcher.gate"
 
 [node name="Sprite3D" parent="Portals/Portal5" index="2"]
 transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
-
-[node name="Portal6" parent="Portals" instance=ExtResource("7_hrjno")]
-transform = Transform3D(-0.10991, 0, 1.49597, 0, 1.5, 0, -1.49597, 0, -0.10991, -54.1026, -1.19041, 43.6096)
-visible = false
-url = "godot_open_rts.gate"
-
-[node name="Sprite3D" parent="Portals/Portal6" index="2"]
-transform = Transform3D(0.739047, 0, 0, 0, 0.739047, 0, 0, 0, 0.739047, 0, 1.74436, 0.0616684)
-pixel_size = 0.005
-texture = ExtResource("11_xcxeu")
-region_rect = Rect2(589, 39, 434.72, 1017.95)
-
-[node name="Sprite3D2" parent="Portals/Portal6" index="3"]
-pixel_size = 0.005
-texture = ExtResource("11_xcxeu")
-region_rect = Rect2(589, 39, 434.72, 1017.95)
 
 [node name="Portal7" parent="Portals" instance=ExtResource("7_hrjno")]
 transform = Transform3D(-0.375849, 0, 1.45215, 0, 1.5, 0, -1.45215, 0, -0.375849, -76.6541, 2.56318, 15.594)
@@ -2599,12 +2583,8 @@ transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 40.
 [node name="platform6" parent="Env" instance=ExtResource("6_u6652")]
 transform = Transform3D(0.427733, 0, 0, 0, 1, 0, 0, 0, 1, 48.1314, -1.59245, 44.5905)
 
-[node name="GateTerminal2" parent="." instance=ExtResource("94_gbrr6")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -40.4985, 2.6999, 60.3389)
-
 [editable path="Portals/Portal2"]
 [editable path="Portals/Portal3"]
 [editable path="Portals/Portal4"]
 [editable path="Portals/Portal5"]
-[editable path="Portals/Portal6"]
 [editable path="Portals/Portal7"]

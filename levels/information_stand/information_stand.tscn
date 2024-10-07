@@ -63,23 +63,32 @@ link = "https://docs.thegates.io"
 [node name="cliff_block_rock2" parent="Platform" instance=ExtResource("1_7x6t6")]
 transform = Transform3D(4.06753, 0, 0, 0, 1, 0, 0, 0, 4.08679, 0, 0, 0)
 
+[node name="cliff_block_rock3" parent="Platform" instance=ExtResource("1_7x6t6")]
+transform = Transform3D(4.06753, 0, 0, 0, 1, 0, 0, 0, 4.08679, 0, 0, -8)
+
 [node name="cliff_stepsCorner_rock2" parent="Platform" instance=ExtResource("2_wiwq0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.017, 0, -9.979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.017, 0, -17.979)
 
 [node name="cliff_stepsCorner_rock4" parent="Platform" instance=ExtResource("2_wiwq0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, 9.993)
 
 [node name="cliff_stepsCorner_rock3" parent="Platform" instance=ExtResource("2_wiwq0")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -9.959, 0, -9.979)
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -9.959, 0, -17.979)
 
 [node name="cliff_stepsCorner_rock5" parent="Platform" instance=ExtResource("2_wiwq0")]
 transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, -9.959, 0, 9.993)
 
 [node name="cliff_steps_rock2" parent="Platform" instance=ExtResource("3_obscg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.017, 0, -9.979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.017, 0, -17.979)
 
 [node name="cliff_steps_rock4" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -5.984)
+
+[node name="cliff_steps_rock20" parent="Platform" instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -9.984)
+
+[node name="cliff_steps_rock21" parent="Platform" instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -13.984)
 
 [node name="cliff_steps_rock7" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, -1.987)
@@ -91,13 +100,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.017, 0, 5.997)
 
 [node name="cliff_steps_rock3" parent="Platform" instance=ExtResource("3_obscg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.021, 0, -9.979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.021, 0, -17.979)
 
 [node name="cliff_steps_rock5" parent="Platform" instance=ExtResource("3_obscg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.969, 0, -9.979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.969, 0, -17.979)
 
 [node name="cliff_steps_rock6" parent="Platform" instance=ExtResource("3_obscg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.963, 0, -9.979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.963, 0, -17.979)
 
 [node name="cliff_steps_rock14" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.963, 0, 9.993)
@@ -113,6 +122,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.017,
 
 [node name="cliff_steps_rock10" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -5.984)
+
+[node name="cliff_steps_rock18" parent="Platform" instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -9.984)
+
+[node name="cliff_steps_rock19" parent="Platform" instance=ExtResource("3_obscg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -13.984)
 
 [node name="cliff_steps_rock11" parent="Platform" instance=ExtResource("3_obscg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.959, 0, -1.987)
