@@ -2,9 +2,21 @@ extends Control
 class_name MouseMode
 
 
+func _ready() -> void:
+	visibility_changed.connect(on_visibility_changed)
+	on_visibility_changed()
+
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("show_mouse"): set_captured(false)
 	if Input.is_action_just_released("show_mouse"): set_captured(true)
+
+
+func on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		set_captured(true)
+	else:
+		set_captured(false)
 
 
 func _notification(what: int) -> void:

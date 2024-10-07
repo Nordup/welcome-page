@@ -41,7 +41,7 @@ connection_events = ExtResource("6_p6o06")
 script = ExtResource("1_hlrxf")
 port = 56612
 max_clients = 256
-host = "95.163.240.240"
+host = "thegates.io"
 
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 
@@ -66,5 +66,4 @@ player_spawner = NodePath("../PlayerSpawner")
 [editable path="HubLevel/Portals/Portal3"]
 [editable path="HubLevel/Portals/Portal4"]
 [editable path="HubLevel/Portals/Portal5"]
-[editable path="HubLevel/Portals/Portal6"]
 [editable path="HubLevel/Portals/Portal7"]

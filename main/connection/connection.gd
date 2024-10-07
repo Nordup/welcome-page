@@ -65,7 +65,7 @@ func start_client() -> void:
 		print("Cannot start client. Err: " + str(err))
 		disconnected.emit()
 		return
-	else: print("Connecting to server...")
+	else: print("Connecting to server: %s:%d..." % [address, port])
 	
 	multiplayer.multiplayer_peer = peer
 	multiplayer.connected_to_server.connect(connected_to_server)
