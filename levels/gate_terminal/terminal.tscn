@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2a4xmbiose6y"]
+[gd_scene load_steps=10 format=3 uid="uid://d2a4xmbiose6y"]
 
 [ext_resource type="Script" path="res://levels/gate_terminal/terminal_info.gd" id="1_8ft2s"]
 [ext_resource type="Texture2D" uid="uid://w7gbua7abmx3" path="res://levels/gates_icons/gdquest_demo.png" id="1_da2l3"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_jwipc"]
-[ext_resource type="FontFile" uid="uid://bieguuna7y5ev" path="res://addons/thegates_export/fonts/Inter-Regular.otf" id="3_ejgqk"]
-[ext_resource type="FontFile" uid="uid://dlsxr6x8ly8o1" path="res://addons/thegates_export/fonts/Inter-Bold.otf" id="4_fjs65"]
-[ext_resource type="FontFile" uid="uid://bhhqmrno12ef5" path="res://addons/thegates_export/fonts/Inter-Italic.otf" id="5_ccqsq"]
-[ext_resource type="FontFile" uid="uid://vedg7uktv7in" path="res://addons/thegates_export/fonts/Inter-BoldItalic.otf" id="6_pdbnu"]
-[ext_resource type="FontFile" uid="uid://c34vdr4dfgjti" path="res://addons/thegates_export/fonts/Monospace.ttf" id="7_y8u65"]
+[ext_resource type="FontFile" uid="uid://bcnit0qah0rb5" path="res://fonts/Inter-Bold.otf" id="4_6bekj"]
+[ext_resource type="FontFile" uid="uid://bek4nfqxc8143" path="res://fonts/Inter-Italic.otf" id="5_j8cr1"]
+[ext_resource type="FontFile" uid="uid://c5hxhq1fmfxoy" path="res://fonts/Inter-BoldItalic.otf" id="6_7alvs"]
+[ext_resource type="FontFile" uid="uid://hxouqh67i60x" path="res://fonts/Monospace.ttf" id="7_x20rd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf6gj"]
 bg_color = Color(1, 1, 1, 1)
@@ -110,11 +109,11 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0.309804, 0.309804, 0.309804, 1)
-theme_override_fonts/normal_font = ExtResource("3_ejgqk")
-theme_override_fonts/bold_font = ExtResource("4_fjs65")
-theme_override_fonts/italics_font = ExtResource("5_ccqsq")
-theme_override_fonts/bold_italics_font = ExtResource("6_pdbnu")
-theme_override_fonts/mono_font = ExtResource("7_y8u65")
+theme_override_fonts/normal_font = ExtResource("1_jwipc")
+theme_override_fonts/bold_font = ExtResource("4_6bekj")
+theme_override_fonts/italics_font = ExtResource("5_j8cr1")
+theme_override_fonts/bold_italics_font = ExtResource("6_7alvs")
+theme_override_fonts/mono_font = ExtResource("7_x20rd")
 theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
 theme_override_font_sizes/italics_font_size = 80
@@ -137,11 +136,11 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 6
 theme_override_colors/default_color = Color(0.309804, 0.309804, 0.309804, 1)
-theme_override_fonts/normal_font = ExtResource("3_ejgqk")
-theme_override_fonts/bold_font = ExtResource("4_fjs65")
-theme_override_fonts/italics_font = ExtResource("5_ccqsq")
-theme_override_fonts/bold_italics_font = ExtResource("6_pdbnu")
-theme_override_fonts/mono_font = ExtResource("7_y8u65")
+theme_override_fonts/normal_font = ExtResource("1_jwipc")
+theme_override_fonts/bold_font = ExtResource("4_6bekj")
+theme_override_fonts/italics_font = ExtResource("5_j8cr1")
+theme_override_fonts/bold_italics_font = ExtResource("6_7alvs")
+theme_override_fonts/mono_font = ExtResource("7_x20rd")
 theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
 theme_override_font_sizes/italics_font_size = 80
