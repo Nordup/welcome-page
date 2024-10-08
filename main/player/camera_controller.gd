@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	_rotation_input += Input.get_action_raw_strength("camera_left") - Input.get_action_raw_strength("camera_right")
 	_tilt_input += Input.get_action_raw_strength("camera_up") - Input.get_action_raw_strength("camera_down")
 	
-	if EditMode.is_enabled:
+	if EditMode.is_enabled or EditMode.is_show_mouse:
 		_rotation_input = 0.0
 		_tilt_input = 0.0
 	

@@ -53,10 +53,15 @@ func hide_panel() -> void:
 	if not root.visible: return
 	
 	root.hide()
-	EditMode.set_show_mouse(false)
+	deffered_hide_mouse()
 	if is_instance_valid(mouse_mode): mouse_mode.set_captured(true)
 	
 	interactable_events.on_unblocked_emit(current)
+
+
+func deffered_hide_mouse() -> void:
+	await get_tree().create_timer(0.2).timeout
+	EditMode.set_show_mouse(false)
 
 
 func load_gate(url: String) -> void:

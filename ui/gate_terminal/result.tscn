@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="4_tevcf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mafe"]
-bg_color = Color(0.977937, 0.977937, 0.977937, 1)
+bg_color = Color(0.976471, 0.976471, 0.976471, 0.784314)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -37,6 +37,7 @@ offset_bottom = 120.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mafe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_37xan")
+theme_override_styles/focus = SubResource("StyleBoxFlat_37xan")
 script = ExtResource("1_b6nfm")
 title = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Title")
 image = NodePath("MarginContainer/HBoxContainer/Mask/Image")
