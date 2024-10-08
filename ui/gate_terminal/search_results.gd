@@ -9,6 +9,7 @@ var result_str: String = "{}"
 
 
 func _ready() -> void:
+	if Connection.is_server(): return
 	search(".")
 
 
