@@ -17,6 +17,7 @@ func fill(gate: Dictionary, panel: TerminalPanel) -> void:
 	
 	var image_path = await FileDownloader.download(gate["image"])
 	image.texture = FileTools.load_external_tex(image_path)
+	image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 
 func _on_button_pressed() -> void:

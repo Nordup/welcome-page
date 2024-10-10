@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c5hxhq1fmfxoy"
-path="res://.godot/imported/Inter-BoldItalic.otf-9513ae38822ab6264ea8c01dd2bc0540.fontdata"
+uid="uid://b3fr7np67ey1a"
+path="res://.godot/imported/Inter-Medium.otf-b31508300914ccb0df6f18bac61918a2.fontdata"
 
 [deps]
 
-source_file="res://fonts/Inter-BoldItalic.otf"
-dest_files=["res://.godot/imported/Inter-BoldItalic.otf-9513ae38822ab6264ea8c01dd2bc0540.fontdata"]
+source_file="res://fonts/Inter-Medium.otf"
+dest_files=["res://.godot/imported/Inter-Medium.otf-b31508300914ccb0df6f18bac61918a2.fontdata"]
 
 [params]
 

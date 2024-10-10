@@ -1,10 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://byfgsmntqeuj2"]
+[gd_scene load_steps=10 format=3 uid="uid://byfgsmntqeuj2"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
 [ext_resource type="Script" path="res://ui/gate_terminal/search_results.gd" id="3_hagb1"]
+[ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="3_x18sh"]
 [ext_resource type="Resource" uid="uid://df0pm2rdlwwy4" path="res://main/backend/api_settings.tres" id="4_ed4rc"]
 [ext_resource type="PackedScene" uid="uid://i3lgu2dyypcq" path="res://ui/gate_terminal/result.tscn" id="5_7sy3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqt6q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_q50fd"]
+font = ExtResource("3_x18sh")
+font_size = 20
+font_color = Color(0.278, 0.278, 0.278, 0.8)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wj5wl"]
+color = Color(0.811765, 0.831373, 0.847059, 1)
+grow_begin = -1.0
+grow_end = -2.0
 
 [node name="TerminalPanel" type="Control" node_paths=PackedStringArray("root", "mouse_pos")]
 layout_mode = 3
@@ -15,11 +33,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_c4msa")
-root = NodePath("Control")
+root = NodePath("TextureButton")
 interactable_events = ExtResource("2_h6a4l")
-mouse_pos = NodePath("Control/MarginContainer/MousePosition")
+mouse_pos = NodePath("TextureButton/Control/MousePosition")
 
-[node name="Control" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,29 +45,74 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="Control" type="Control" parent="TextureButton"]
 layout_mode = 1
-anchors_preset = 11
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -560.0
+offset_left = -440.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 690.0
 grow_horizontal = 0
-grow_vertical = 2
-mouse_filter = 0
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 240
 
-[node name="MousePosition" type="Control" parent="Control/MarginContainer"]
-layout_mode = 2
+[node name="MousePosition" type="Control" parent="TextureButton/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="Control/MarginContainer"]
+[node name="BackgroundPanel" type="Panel" parent="TextureButton/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqt6q")
+
+[node name="Label" type="Label" parent="TextureButton/Control"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 17.0
+offset_right = 180.0
+offset_bottom = 45.0
+text = "Available gates"
+label_settings = SubResource("LabelSettings_q50fd")
+
+[node name="Separator" type="Panel" parent="TextureButton/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 56.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxLine_wj5wl")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureButton/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -593.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="TextureButton/Control/MarginContainer"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/Control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureButton/Control/MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,7 +122,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Control/ScrollContainer" node_paths=PackedStringArray("panel")]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureButton/Control/MarginContainer/Control/ScrollContainer" node_paths=PackedStringArray("panel")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -67,9 +130,9 @@ theme_override_constants/separation = 10
 script = ExtResource("3_hagb1")
 exclude_url = "https://thegates.io/worlds/world.gate"
 api = ExtResource("4_ed4rc")
-panel = NodePath("../../../../..")
+panel = NodePath("../../../../../..")
 result_scene = ExtResource("5_7sy3s")
 
-[node name="Result" parent="Control/MarginContainer/Control/ScrollContainer/VBoxContainer" instance=ExtResource("5_7sy3s")]
+[node name="Result" parent="TextureButton/Control/MarginContainer/Control/ScrollContainer/VBoxContainer" instance=ExtResource("5_7sy3s")]
 visible = false
 layout_mode = 2

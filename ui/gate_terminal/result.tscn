@@ -1,22 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://i3lgu2dyypcq"]
+[gd_scene load_steps=12 format=3 uid="uid://i3lgu2dyypcq"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/result.gd" id="1_b6nfm"]
 [ext_resource type="Texture2D" uid="uid://bbeapq20uqyec" path="res://levels/gates_icons/gdquest_godot4_demos.png" id="2_djnv4"]
-[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="4_tevcf"]
+[ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="3_m4li3"]
+[ext_resource type="Texture2D" uid="uid://2kg3a3nt3bq8" path="res://ui/gate_terminal/bar-chart.png" id="4_uar47"]
+[ext_resource type="Texture2D" uid="uid://cf35mvplok2ci" path="res://ui/gate_terminal/confetti.png" id="6_yswqa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mafe"]
-bg_color = Color(0.976471, 0.976471, 0.976471, 0.784314)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37xan"]
-bg_color = Color(0.976471, 0.976471, 0.976471, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+bg_color = Color(0.811765, 0.831373, 0.847059, 0.2)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6os7t"]
 corner_radius_top_left = 16
@@ -25,15 +27,24 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_ywfdd"]
-line_spacing = -5.0
-font = ExtResource("4_tevcf")
-font_size = 28
-font_color = Color(0.476471, 0.453277, 0.443265, 1)
+font = ExtResource("3_m4li3")
+font_size = 22
+font_color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wedly"]
+font = ExtResource("3_m4li3")
+font_size = 15
+font_color = Color(0.666667, 0.666667, 0.666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lf40"]
+font = ExtResource("3_m4li3")
+font_size = 15
+font_color = Color(0.458824, 1, 0.521569, 1)
 
 [node name="Result" type="Button" node_paths=PackedStringArray("title", "image")]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 80)
 offset_right = 500.0
-offset_bottom = 120.0
+offset_bottom = 80.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mafe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_37xan")
@@ -60,13 +71,14 @@ theme_override_constants/separation = 15
 
 [node name="Mask" type="Panel" parent="MarginContainer/HBoxContainer"]
 clip_children = 1
-custom_minimum_size = Vector2(100, 0)
+texture_filter = 4
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_6os7t")
 
 [node name="Image" type="TextureRect" parent="MarginContainer/HBoxContainer/Mask"]
-custom_minimum_size = Vector2(87, 87)
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,9 +92,10 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -90,10 +103,41 @@ text = "Title"
 label_settings = SubResource("LabelSettings_ywfdd")
 text_overrun_behavior = 3
 
-[node name="SpanLimiter" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-clip_contents = true
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 1
+theme_override_constants/separation = 15
+
+[node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
+self_modulate = Color(0.85098, 0.85098, 0.85098, 1)
+layout_mode = 2
+texture = ExtResource("4_uar47")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "123"
+label_settings = SubResource("LabelSettings_wedly")
+
+[node name="New" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
+self_modulate = Color(0.458824, 1, 0.521569, 1)
+layout_mode = 2
+texture = ExtResource("6_yswqa")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "New"
+label_settings = SubResource("LabelSettings_4lf40")
 
 [connection signal="pressed" from="." to="." method="_on_button_pressed"]
