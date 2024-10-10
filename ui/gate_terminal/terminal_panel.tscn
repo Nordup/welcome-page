@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byfgsmntqeuj2"]
+[gd_scene load_steps=14 format=3 uid="uid://byfgsmntqeuj2"]
 
 [ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
@@ -23,6 +23,32 @@ font_color = Color(0.278, 0.278, 0.278, 0.8)
 color = Color(0.811765, 0.831373, 0.847059, 1)
 grow_begin = -1.0
 grow_end = -2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3torj"]
+bg_color = Color(0.812, 0.831, 0.847, 0.4)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16ggp"]
+bg_color = Color(0.812, 0.831, 0.847, 0.8)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_47k6o"]
+color = Color(0, 0, 0, 0)
+thickness = 5
+vertical = true
+
+[sub_resource type="Theme" id="Theme_pg4ql"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_3torj")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_16ggp")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_16ggp")
+VScrollBar/styles/scroll = SubResource("StyleBoxLine_47k6o")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxLine_47k6o")
 
 [node name="TerminalPanel" type="Control" node_paths=PackedStringArray("root", "mouse_pos")]
 layout_mode = 3
@@ -106,7 +132,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 10
 
 [node name="Control" type="Control" parent="TextureButton/Control/MarginContainer"]
@@ -120,6 +146,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = SubResource("Theme_pg4ql")
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureButton/Control/MarginContainer/Control/ScrollContainer" node_paths=PackedStringArray("panel")]

@@ -21,10 +21,10 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6os7t"]
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_ywfdd"]
 font = ExtResource("3_m4li3")
@@ -39,21 +39,33 @@ font_color = Color(0.666667, 0.666667, 0.666667, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_4lf40"]
 font = ExtResource("3_m4li3")
 font_size = 15
-font_color = Color(0.458824, 1, 0.521569, 1)
+font_color = Color(0, 1, 0.329412, 1)
 
-[node name="Result" type="Button" node_paths=PackedStringArray("title", "image")]
+[node name="Result" type="HBoxContainer" node_paths=PackedStringArray("title", "image", "stats", "new_root")]
 custom_minimum_size = Vector2(0, 80)
-offset_right = 500.0
-offset_bottom = 80.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1470.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+script = ExtResource("1_b6nfm")
+title = NodePath("Button/MarginContainer/HBoxContainer/VBoxContainer/Title")
+image = NodePath("Button/MarginContainer/HBoxContainer/Mask/Image")
+stats = NodePath("Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats/Label")
+new_root = NodePath("Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mafe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/focus = SubResource("StyleBoxFlat_37xan")
-script = ExtResource("1_b6nfm")
-title = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Title")
-image = NodePath("MarginContainer/HBoxContainer/Mask/Image")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,11 +77,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Mask" type="Panel" parent="MarginContainer/HBoxContainer"]
+[node name="Mask" type="Panel" parent="Button/MarginContainer/HBoxContainer"]
 clip_children = 1
 texture_filter = 4
 custom_minimum_size = Vector2(60, 0)
@@ -77,7 +89,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_6os7t")
 
-[node name="Image" type="TextureRect" parent="MarginContainer/HBoxContainer/Mask"]
+[node name="Image" type="TextureRect" parent="Button/MarginContainer/HBoxContainer/Mask"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 15
@@ -91,53 +103,56 @@ texture = ExtResource("2_djnv4")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="Button/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Title"
 label_settings = SubResource("LabelSettings_ywfdd")
 text_overrun_behavior = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Button/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 15
 
-[node name="Stats" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Stats" type="HBoxContainer" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 5
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
+[node name="TextureRect" type="TextureRect" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
 self_modulate = Color(0.85098, 0.85098, 0.85098, 1)
 layout_mode = 2
 texture = ExtResource("4_uar47")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
+[node name="Label" type="Label" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/Stats"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "123"
 label_settings = SubResource("LabelSettings_wedly")
 
-[node name="New" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="New" type="HBoxContainer" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 5
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
-self_modulate = Color(0.458824, 1, 0.521569, 1)
+[node name="TextureRect" type="TextureRect" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
+self_modulate = Color(1.61719e-05, 0.998647, 0.330029, 1)
 layout_mode = 2
 texture = ExtResource("6_yswqa")
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
+[node name="Label" type="Label" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
 layout_mode = 2
 size_flags_vertical = 8
 text = "New"
 label_settings = SubResource("LabelSettings_4lf40")
 
-[connection signal="pressed" from="." to="." method="_on_button_pressed"]
+[node name="EmptySpace" type="Control" parent="."]
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
