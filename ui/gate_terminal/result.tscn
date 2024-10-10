@@ -39,7 +39,7 @@ font_color = Color(0.666667, 0.666667, 0.666667, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_4lf40"]
 font = ExtResource("3_m4li3")
 font_size = 15
-font_color = Color(0, 1, 0.329412, 1)
+font_color = Color(0.278431, 1, 0.407843, 1)
 
 [node name="Result" type="HBoxContainer" node_paths=PackedStringArray("title", "image", "stats", "new_root")]
 custom_minimum_size = Vector2(0, 80)
@@ -142,7 +142,7 @@ size_flags_vertical = 8
 theme_override_constants/separation = 5
 
 [node name="TextureRect" type="TextureRect" parent="Button/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/New"]
-self_modulate = Color(1.61719e-05, 0.998647, 0.330029, 1)
+self_modulate = Color(0.278848, 1, 0.409479, 1)
 layout_mode = 2
 texture = ExtResource("6_yswqa")
 

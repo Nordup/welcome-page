@@ -22,7 +22,7 @@ font_color = Color(0.278, 0.278, 0.278, 0.8)
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_wj5wl"]
 color = Color(0.811765, 0.831373, 0.847059, 1)
 grow_begin = -1.0
-grow_end = -2.0
+grow_end = -1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3torj"]
 bg_color = Color(0.812, 0.831, 0.847, 0.4)
