@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cykcjgluho2ko"]
+[gd_scene load_steps=13 format=3 uid="uid://cykcjgluho2ko"]
 
 [ext_resource type="Script" path="res://ui/chat/chat_view.gd" id="1_gavtj"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_xvwmp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://ui/chat/chat_input.gd" id="4_gow1v"]
 [ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="5_5ehaj"]
 [ext_resource type="Texture2D" uid="uid://bmqi2ua7oxy8u" path="res://ui/chat/enter-key.png" id="8_kp1p0"]
+[ext_resource type="AudioStream" uid="uid://q0a0evylbrlk" path="res://ui/chat/send.wav" id="9_6gfjo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1jko0"]
 font = ExtResource("1_xvwmp")
@@ -111,7 +112,7 @@ theme_override_constants/margin_right = 10
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer" node_paths=PackedStringArray("send_sound")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -126,9 +127,14 @@ editable = false
 script = ExtResource("4_gow1v")
 chat_events = ExtResource("5_5ehaj")
 connection_events = ExtResource("3_v83rb")
+send_sound = NodePath("../../../../../Send")
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 2
 texture = ExtResource("8_kp1p0")
 stretch_mode = 3
+
+[node name="Send" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6gfjo")
+volume_db = -6.0

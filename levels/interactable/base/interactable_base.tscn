@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://levels/interactable/base/interactable_controller.gd" id="3_lowmd"]
 [ext_resource type="Shader" uid="uid://berxuvg6hsnni" path="res://levels/interactable/base/interactable.tres" id="4_wrh6f"]
 [ext_resource type="Script" path="res://levels/interactable/base/interactable_animation.gd" id="5_wfm1n"]
-[ext_resource type="AudioStream" uid="uid://cei602q22y2ao" path="res://levels/interactable/base/pop-sound-effect.mp3" id="6_ot0rv"]
+[ext_resource type="AudioStream" uid="uid://cei602q22y2ao" path="res://levels/interactable/base/pop.mp3" id="6_8fca8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnw17"]
 render_priority = 0
@@ -49,5 +49,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_0e1i7")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_ot0rv")
+stream = ExtResource("6_8fca8")
 volume_db = -45.0

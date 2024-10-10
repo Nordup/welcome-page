@@ -2,6 +2,7 @@ extends LineEdit
 
 @export var chat_events: ChatEvents
 @export var connection_events: ConnectionEvents
+@export var send_sound: AudioStreamPlayer
 
 var username: String
 var is_edit_name: bool
@@ -69,6 +70,8 @@ func on_text_submitted(_text: String) -> void:
 	EditMode.set_enabled(false)
 	release_focus()
 	
+	if text.is_empty(): return
+	
 	if is_edit_name:
 		if not username.is_empty() or not text.is_empty():
 			is_edit_name = false
@@ -80,4 +83,5 @@ func on_text_submitted(_text: String) -> void:
 	else:
 		chat_events.send_message_emit(username, text)
 	
+	send_sound.play()
 	text = ""

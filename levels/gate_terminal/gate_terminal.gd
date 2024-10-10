@@ -32,9 +32,10 @@ func on_synchronized() -> void:
 
 
 func on_load_gate(url: String) -> void:
-	print("Loading gate: " + url)
 	if url.is_empty(): return
+	if current_url == url: return
 	
+	print("Loading gate: " + url)
 	terminal_info.set_info(url)
 	var success = await terminal_info.on_info_set
 	if not success: return
