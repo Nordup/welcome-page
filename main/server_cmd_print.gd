@@ -5,4 +5,4 @@ func _run():
 	var godot = OS.get_executable_path()
 	var project = ProjectSettings.globalize_path("res://")
 	var cmd = "%s --path %s --server --headless" % [godot, project]
-	print(cmd)
+	Debug.log_msg(cmd)

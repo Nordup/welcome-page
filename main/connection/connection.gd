@@ -42,11 +42,11 @@ func start_server() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_server(port, max_clients)
 	if err != OK:
-		print("Cannot start server. Err: " + str(err))
+		Debug.log_msg("Cannot start server. Err: " + str(err))
 		disconnected.emit()
 		return
 	else:
-		print("Server started on port " + str(port))
+		Debug.log_msg("Server started on port " + str(port))
 		connected.emit()
 	
 	multiplayer.multiplayer_peer = peer
@@ -62,10 +62,10 @@ func start_client() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	var err = peer.create_client(address, port)
 	if err != OK:
-		print("Cannot start client. Err: " + str(err))
+		Debug.log_msg("Cannot start client. Err: " + str(err))
 		disconnected.emit()
 		return
-	else: print("Connecting to server: %s:%d..." % [address, port])
+	else: Debug.log_msg("Connecting to server: %s:%d..." % [address, port])
 	
 	multiplayer.multiplayer_peer = peer
 	multiplayer.connected_to_server.connect(connected_to_server)
@@ -74,21 +74,21 @@ func start_client() -> void:
 
 
 func connected_to_server() -> void:
-	print("Connected to server")
+	Debug.log_msg("Connected to server")
 	connected.emit()
 
 
 func server_connection_failure() -> void:
-	print("Disconnected")
+	Debug.log_msg("Disconnected")
 	disconnected.emit()
 
 
 func peer_connected(id: int) -> void:
-	print("Peer connected: " + str(id))
+	Debug.log_msg("Peer connected: " + str(id))
 
 
 func peer_disconnected(id: int) -> void:
-	print("Peer disconnected: " + str(id))
+	Debug.log_msg("Peer disconnected: " + str(id))
 
 
 func disconnect_all() -> void:

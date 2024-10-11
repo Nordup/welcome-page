@@ -35,13 +35,13 @@ func create_local_player() -> void:
 func respawn_local_player() -> void:
 	var spawn_position = spawn_points.get_spawn_position()
 	local_player.respawn(spawn_position)
-	print("Respawn player at " + str(spawn_position))
+	Debug.log_msg("Respawn player at " + str(spawn_position))
 
 
 func create_player(id: int) -> void:
 	if not multiplayer.is_server(): return
 	spawn(id)
-	print("Player %d spawned" % [id])
+	Debug.log_msg("Player %d spawned" % [id])
 
 
 func destroy_player(id: int) -> void:

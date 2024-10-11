@@ -21,13 +21,13 @@ func search(query: String) -> void:
 	
 	var gates = JSON.parse_string(result_str)
 	if gates == null or gates.is_empty():
-		print("No gates found")
+		Debug.log_msg("No gates found")
 		return
 	
 	var new_gates = find_new_gates(gates)
 	for gate in gates:
 		if gate["url"] == exclude_url: continue
-		print(gate["url"])
+		Debug.log_msg(gate["url"])
 		
 		var result: SearchResult = result_scene.instantiate()
 		result.fill(gate, panel, gate in new_gates)
@@ -39,10 +39,10 @@ func search_request(query: String) -> void:
 	var callback = func(_result, code, _headers, body):
 		if code == 200:
 			result_str = body.get_string_from_utf8()
-		else: print("Request search failed. Code " + str(code))
+		else: Debug.log_msg("Request search failed. Code " + str(code))
 	
 	var err = await Backend.request(url, callback)
-	if err != HTTPRequest.RESULT_SUCCESS: print("Cannot send request search")
+	if err != HTTPRequest.RESULT_SUCCESS: Debug.log_msg("Cannot send request search")
 
 
 func find_new_gates(gates: Array) -> Array:

@@ -59,4 +59,4 @@ func clear() -> void:
 
 
 func try_print(text: Variant) -> void:
-	if print_log: print(text)
+	if print_log: Debug.log_msg(text)

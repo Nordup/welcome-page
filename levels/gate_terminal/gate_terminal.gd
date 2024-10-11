@@ -15,6 +15,7 @@ var current_url: String
 
 func _ready() -> void:
 	if Connection.is_server():
+		portal.url = start_url
 		_url = start_url
 		return
 	
@@ -27,7 +28,7 @@ func _ready() -> void:
 
 func on_synchronized() -> void:
 	if _url == current_url: return
-	print("Synchronized %s: %s" % [name, _url])
+	Debug.log_msg("Synchronized %s: %s" % [name, _url])
 	on_load_gate(_url)
 
 
@@ -35,7 +36,7 @@ func on_load_gate(url: String) -> void:
 	if url.is_empty(): return
 	if current_url == url: return
 	
-	print("Loading gate: " + url)
+	Debug.log_msg("Loading gate: " + url)
 	terminal_info.set_info(url)
 	var success = await terminal_info.on_info_set
 	if not success: return
@@ -49,8 +50,9 @@ func on_load_gate(url: String) -> void:
 
 @rpc("any_peer", "call_remote", "reliable")
 func set_server_url(url: String) -> void:
-	if not multiplayer.is_server(): return
+	if not Connection.is_server(): return
 	if _url == url: return
 	
-	print("Setting %s url to %s" % [name, url])
+	Debug.log_msg("Setting %s url to %s" % [name, url])
+	portal.url = url
 	_url = url

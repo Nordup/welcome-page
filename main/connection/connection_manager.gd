@@ -34,7 +34,7 @@ func on_disconnected() -> void:
 	else: connection_events.status_changed_emit(ConnectionEvents.Status.FAILED_TO_CONNECT)
 	connected = false
 	
-	print("Wait %d seconds and try connecting again" % [RECONNECT_DELAY])
+	Debug.log_msg("Wait %d seconds and try connecting again" % [RECONNECT_DELAY])
 	await get_tree().create_timer(RECONNECT_DELAY).timeout
 	connection.start_client()
 	

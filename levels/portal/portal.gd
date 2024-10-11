@@ -11,7 +11,7 @@ func _on_portal_entered(body):
 	if body.get_multiplayer_authority() != multiplayer.get_unique_id() and \
 		Connection.is_peer_connected: return
 	
-	print("Portal_entered: " + url)
+	Debug.log_msg("Portal_entered: " + url)
 	await get_tree().create_timer(0.3).timeout
 	
 	if get_tree().has_method("send_command"):
