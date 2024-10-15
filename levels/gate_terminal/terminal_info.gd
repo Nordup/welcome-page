@@ -1,8 +1,6 @@
 extends Control
 class_name TerminalInfo
 
-signal on_info_set(success: bool)
-
 @export var image_texture: TextureRect
 @export var title_label: Label
 @export var desc_one: RichTextLabel
@@ -11,21 +9,21 @@ signal on_info_set(success: bool)
 var current_desc: RichTextLabel
 
 
-func set_info(gate_url: String) -> void:
+func set_info(gate_url: String) -> bool:
 	var config_path = await FileDownloader.download(gate_url, 10)
 	if config_path.is_empty():
 		Debug.log_msg("Cannot download gate config")
-		on_info_set.emit(false)
-		return
+		await get_tree().process_frame
+		return false
 	
 	var c_gate = ConfigGate.new(config_path, gate_url)
+	var image_path = await FileDownloader.download(c_gate.image_url)
+	
+	image_texture.texture = FileTools.load_external_tex(image_path)
 	title_label.text = c_gate.title
 	set_desc(c_gate.description)
 	
-	var image_path = await FileDownloader.download(c_gate.image_url)
-	image_texture.texture = FileTools.load_external_tex(image_path)
-	
-	on_info_set.emit(true)
+	return true
 
 
 func set_desc(text: String) -> void:

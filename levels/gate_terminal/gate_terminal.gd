@@ -37,8 +37,7 @@ func on_load_gate(url: String) -> void:
 	if current_url == url: return
 	
 	Debug.log_msg("Loading gate: " + url)
-	terminal_info.set_info(url)
-	var success = await terminal_info.on_info_set
+	var success = await terminal_info.set_info(url)
 	if not success: return
 	
 	set_server_url.rpc(url)
