@@ -22,7 +22,7 @@ shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.262745)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8g2s0"]
-properties/0/path = NodePath(".:_url")
+properties/0/path = NodePath(".:synced_url")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 

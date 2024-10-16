@@ -8,7 +8,7 @@ extends Node3D
 @export var synchronizer: MultiplayerSynchronizer
 
 ## Sync property
-@export var _url: String
+@export var synced_url: String
 
 var current_url: String
 
@@ -16,23 +16,23 @@ var current_url: String
 func _ready() -> void:
 	if Connection.is_server():
 		portal.url = start_url
-		_url = start_url
+		synced_url = start_url
 		return
 	
 	synchronizer.delta_synchronized.connect(on_synchronized)
 	synchronizer.synchronized.connect(on_synchronized)
 	
 	interactable.on_load_gate.connect(on_load_gate)
-	on_load_gate(start_url)
+	on_load_gate(start_url, false)
 
 
 func on_synchronized() -> void:
-	if _url == current_url: return
-	Debug.log_msg("Synchronized %s: %s" % [name, _url])
-	on_load_gate(_url)
+	if synced_url == current_url: return
+	Debug.log_msg("Synchronized %s: %s" % [name, synced_url])
+	on_load_gate(synced_url, false)
 
 
-func on_load_gate(url: String) -> void:
+func on_load_gate(url: String, sync: bool = true) -> void:
 	if url.is_empty(): return
 	if current_url == url: return
 	
@@ -40,7 +40,7 @@ func on_load_gate(url: String) -> void:
 	var success = await terminal_info.set_info(url)
 	if not success: return
 	
-	set_server_url.rpc(url)
+	if sync: synchronize_url.rpc(url)
 	current_url = url
 	portal.url = url
 	
@@ -48,10 +48,10 @@ func on_load_gate(url: String) -> void:
 
 
 @rpc("any_peer", "call_remote", "reliable")
-func set_server_url(url: String) -> void:
+func synchronize_url(url: String) -> void:
 	if not Connection.is_server(): return
-	if _url == url: return
+	if synced_url == url: return
 	
 	Debug.log_msg("Setting %s url to %s" % [name, url])
 	portal.url = url
-	_url = url
+	synced_url = url
