@@ -41,7 +41,7 @@ connection_events = ExtResource("6_p6o06")
 script = ExtResource("1_hlrxf")
 port = 56612
 max_clients = 256
-host = "thegates.io"
+host = "188.245.188.59"
 
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 
