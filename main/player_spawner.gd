@@ -26,7 +26,7 @@ func create_local_player() -> void:
 	var player: Player = player_scene.instantiate()
 	
 	player.name = "LocalPlayer"
-	player.position = spawn_position
+	player.call_deferred("set_position", spawn_position)
 	local_player = player
 	
 	get_node(spawn_path).add_child(player)

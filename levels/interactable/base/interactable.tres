@@ -110,8 +110,8 @@ render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specul
 
 
 // Varyings
-varying vec3 positionOS;
-varying vec3 normalOS;
+varying vec3 var_positionOS;
+varying vec3 var_normalOS;
 
 instance uniform vec4 Albedo : source_color = vec4(0.490196, 0.819608, 1.000000, 0.603922);
 uniform float Speed = 3;
@@ -128,7 +128,7 @@ void vertex() {
 
 
 // VaryingSetter:3
-	positionOS = n_out2p0;
+	var_positionOS = n_out2p0;
 
 
 // Input:4
@@ -136,7 +136,7 @@ void vertex() {
 
 
 // VaryingSetter:7
-	normalOS = n_out4p0;
+	var_normalOS = n_out4p0;
 
 
 }
@@ -148,7 +148,7 @@ void fragment() {
 
 
 // VaryingGetter:8
-	vec3 n_out8p0 = positionOS;
+	vec3 n_out8p0 = var_positionOS;
 
 
 // VectorOp:9
