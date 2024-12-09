@@ -13,11 +13,11 @@ var new_id_max: int
 
 func _ready() -> void:
 	if Connection.is_server(): return
-	search(".")
+	all_gates()
 
 
-func search(query: String) -> void:
-	await search_request(query)
+func all_gates() -> void:
+	await all_gates_request()
 	
 	var gates = JSON.parse_string(result_str)
 	if gates == null or gates.is_empty():
@@ -25,6 +25,7 @@ func search(query: String) -> void:
 		return
 	
 	var new_gates = find_new_gates(gates)
+	gates = sort_gates(gates, new_gates)
 	for gate in gates:
 		if gate["url"] == exclude_url: continue
 		Debug.log_msg(gate["url"])
@@ -34,15 +35,15 @@ func search(query: String) -> void:
 		add_child(result)
 
 
-func search_request(query: String) -> void:
-	var url = api.search + query.uri_encode()
+func all_gates_request() -> void:
+	var url = api.all_gates
 	var callback = func(_result, code, _headers, body):
 		if code == 200:
 			result_str = body.get_string_from_utf8()
-		else: Debug.log_msg("Request search failed. Code " + str(code))
+		else: Debug.log_msg("Request all_gates failed. Code " + str(code))
 	
 	var err = await Backend.request(url, callback)
-	if err != HTTPRequest.RESULT_SUCCESS: Debug.log_msg("Cannot send request search")
+	if err != HTTPRequest.RESULT_SUCCESS: Debug.log_msg("Cannot send request all_gates")
 
 
 func find_new_gates(gates: Array) -> Array:
@@ -66,3 +67,15 @@ func find_new_gates(gates: Array) -> Array:
 			new_gates.append(gate)
 	
 	return new_gates
+
+
+func sort_gates(gates: Array, new_gates: Array) -> Array:
+	var results = new_gates.duplicate()
+	results.shuffle()
+	gates.shuffle()
+	
+	for gate in gates:
+		if gate not in results:
+			results.append(gate)
+	
+	return results

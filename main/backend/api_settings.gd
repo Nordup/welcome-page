@@ -16,6 +16,9 @@ var url: String :
 var featured_gates: String :
 	get: return url + "/api/featured_gates"
 
+var all_gates: String :
+	get: return url + "/api/all_gates"
+
 var search: String :
 	get: return url + "/api/search?query="
 
