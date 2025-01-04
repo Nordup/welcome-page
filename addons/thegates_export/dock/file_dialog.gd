@@ -1,4 +1,5 @@
 @tool
+class_name TGFileDialog
 extends Control
 
 signal dir_selected(dir: String)
@@ -21,7 +22,7 @@ func _ready() -> void:
 	
 	fileDialog.dir_selected.connect(func(dir): dir_selected.emit(dir))
 	fileDialog.file_selected.connect(func(path): file_selected.emit(path))
-	fileDialog.files_selected.connect(func(paths): file_selected.emit(paths))
+	fileDialog.files_selected.connect(func(paths): files_selected.emit(paths))
 
 
 func open_file_dialog() -> void:

@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Monospace.ttf-1dc8630fb74e01f485eb642fd0ceac9
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
