@@ -26,7 +26,7 @@ func fill(gate: Dictionary, panel: TerminalPanel, is_new: bool = false) -> void:
 	new_root.visible = true if is_new else false
 	
 	var image_path = await FileDownloader.download(gate["image"])
-	image.texture = FileTools.load_external_tex(image_path)
+	image.texture = await FileTools.load_external_tex(image_path, true)
 	image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 
 

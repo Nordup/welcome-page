@@ -1,8 +1,8 @@
 extends Node
-class_name FileTools
+# class_name FileTools
 
 
-static func remove_recursive(path: String) -> void:
+func remove_recursive(path: String) -> void:
 	if not DirAccess.dir_exists_absolute(path) and not FileAccess.file_exists(path): return
 	
 	var dir = DirAccess.open(path)
@@ -26,7 +26,21 @@ static func remove_recursive(path: String) -> void:
 		printerr("Error removing " + path)
 
 
-static func load_external_tex(path: String) -> Texture2D:
+func load_external_tex(path: String, use_threads: bool = false) -> Texture2D:
+	if use_threads:
+		var thread = Thread.new()
+		thread.start(_load_texture_internal.bind(path))
+		
+		while thread.is_alive():
+			await get_tree().process_frame
+
+		var texture = thread.wait_to_finish()
+		return texture
+	else:
+		return _load_texture_internal(path)
+
+
+func _load_texture_internal(path: String) -> Texture2D:
 	if path.begins_with("res://"): return load(path)
 	if not FileAccess.file_exists(path): return null
 	

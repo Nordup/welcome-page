@@ -19,7 +19,7 @@ func set_info(gate_url: String) -> bool:
 	var c_gate = ConfigGate.new(config_path, gate_url)
 	var image_path = await FileDownloader.download(c_gate.image_url)
 	
-	image_texture.texture = FileTools.load_external_tex(image_path)
+	image_texture.texture = await FileTools.load_external_tex(image_path, true)
 	title_label.text = c_gate.title
 	set_desc(c_gate.description)
 	

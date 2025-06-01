@@ -92,7 +92,7 @@ anchor_right = 1.0
 offset_bottom = 253.0
 grow_horizontal = 2
 size_flags_vertical = 6
-text = "Gate title"
+text = "Information"
 label_settings = SubResource("LabelSettings_ctejw")
 autowrap_mode = 3
 text_overrun_behavior = 3
@@ -120,7 +120,7 @@ theme_override_font_sizes/mono_font_size = 80
 theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
-text = "Lorem ipsum odor amet, consectetuer adipiscing elit. Duis aenean ut adipiscing ultrices elementum."
+text = "Choose where you wanna teleport from this circle"
 scroll_active = false
 
 [node name="RichLabelTwo" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -147,5 +147,5 @@ theme_override_font_sizes/mono_font_size = 80
 theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
-text = "Lorem ipsum odor amet, consectetuer adipiscing elit. Duis aenean ut adipiscing ultrices elementum."
+text = "Choose where you wanna teleport from this circle"
 scroll_active = false

@@ -21,18 +21,16 @@ func _ready() -> void:
 	
 	synchronizer.delta_synchronized.connect(on_synchronized)
 	synchronizer.synchronized.connect(on_synchronized)
-	
-	interactable.on_load_gate.connect(on_load_gate)
-	on_load_gate(start_url, false)
+	interactable.on_load_gate.connect(on_load_gate.bind(true))
 
 
 func on_synchronized() -> void:
 	if synced_url == current_url: return
 	Debug.log_msg("Synchronized %s: %s" % [name, synced_url])
-	on_load_gate(synced_url, false)
+	on_load_gate(synced_url)
 
 
-func on_load_gate(url: String, sync: bool = true) -> void:
+func on_load_gate(url: String, sync: bool = false) -> void:
 	if url.is_empty(): return
 	if current_url == url: return
 	

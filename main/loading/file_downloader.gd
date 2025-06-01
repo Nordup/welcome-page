@@ -1,4 +1,5 @@
 extends Node
+# class_name FileDownloader
 
 class DownloadRequest:
 	var save_path: String
