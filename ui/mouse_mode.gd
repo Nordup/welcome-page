@@ -4,8 +4,7 @@ class_name MouseMode
 
 func _ready() -> void:
 	visibility_changed.connect(on_visibility_changed)
-	if OS.has_feature("editor"):
-		on_visibility_changed()
+	on_visibility_changed()
 
 
 func _input(_event: InputEvent) -> void:
