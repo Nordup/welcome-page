@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4ltgyyhoi2xx" path="res://levels/information_stand/assets/gates.png" id="6_pdxtf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf6gj"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.97, 0.97, 0.97, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50

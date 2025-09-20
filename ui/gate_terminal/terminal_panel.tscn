@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://byfgsmntqeuj2"]
 
-[ext_resource type="Script" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
+[ext_resource type="Script" uid="uid://bb57u0hge5whk" path="res://ui/gate_terminal/terminal_panel.gd" id="1_c4msa"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="2_h6a4l"]
-[ext_resource type="Script" path="res://ui/gate_terminal/search_results.gd" id="3_hagb1"]
+[ext_resource type="Script" uid="uid://bqjy6i6vhq4qw" path="res://ui/gate_terminal/search_results.gd" id="3_hagb1"]
 [ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="3_x18sh"]
 [ext_resource type="Resource" uid="uid://df0pm2rdlwwy4" path="res://main/backend/api_settings.tres" id="4_ed4rc"]
 [ext_resource type="PackedScene" uid="uid://i3lgu2dyypcq" path="res://ui/gate_terminal/result.tscn" id="5_7sy3s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqt6q"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.99, 0.99, 0.99, 1)
 corner_radius_top_left = 17
 corner_radius_top_right = 17
 corner_radius_bottom_right = 17

@@ -14,7 +14,7 @@ config/name="WelcomePage"
 config/tags=PackedStringArray("gate")
 run/main_scene="res://main/main.tscn"
 run/disable_stderr=true
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/flush_stdout_on_print=true
 boot_splash/bg_color=Color(0.129412, 0.14902, 0.180392, 1)
 config/icon="res://icon.png"
@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [audio]
 
 buses/default_bus_layout="res://defaults/audio_bus_layout.tres"
+driver/enable_input=true
 driver/mix_rate=48000
 
 [autoload]
@@ -141,6 +142,6 @@ skip={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.129412, 0.14902, 0.180392, 1)
 anti_aliasing/quality/msaa_3d=2
+environment/defaults/default_clear_color=Color(0.129412, 0.14902, 0.180392, 1)
 environment/defaults/default_environment="res://defaults/world_environment.tres"

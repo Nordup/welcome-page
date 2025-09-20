@@ -106,7 +106,7 @@ varying_type = 4
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded, shadows_disabled;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded, shadows_disabled;
 
 
 // Varyings
@@ -114,10 +114,10 @@ varying vec3 var_positionOS;
 varying vec3 var_normalOS;
 
 instance uniform vec4 Albedo : source_color = vec4(0.490196, 0.819608, 1.000000, 0.603922);
-uniform float Speed = 3;
+uniform float Speed = 3.0;
 instance uniform float SinEffect = 0.10000000149012;
 uniform sampler2D curve_frg_36 : repeat_disable;
-instance uniform float Gap = 0;
+instance uniform float Gap = 0.0;
 uniform sampler2D curve_frg_25 : repeat_disable;
 
 

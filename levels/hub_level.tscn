@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dex0ug62o8ifv" path="res://levels/spawn_point.tscn" id="3_ftqdc"]
 [ext_resource type="PackedScene" uid="uid://bc1m0p75myj0j" path="res://levels/information_stand/information_stand.tscn" id="3_g5rb0"]
 [ext_resource type="AudioStream" uid="uid://ba1cdy2wtaovr" path="res://levels/background-music.mp3" id="4_vrhbq"]
-[ext_resource type="Script" path="res://main/spawn_points.gd" id="5_whw28"]
+[ext_resource type="Script" uid="uid://cx3vh6ykqw1aj" path="res://main/spawn_points.gd" id="5_whw28"]
 [ext_resource type="PackedScene" uid="uid://b45fsm1j2m45s" path="res://addons/kenney_nature-kit/platform.glb" id="6_u6652"]
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="7_hrjno"]
 [ext_resource type="Texture2D" uid="uid://ci70onah2w3b5" path="res://levels/gates_icons/sketchy_render.png" id="8_2qs3l"]
@@ -98,8 +98,9 @@
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
+light_energy = 0.6
 shadow_enabled = true
-shadow_opacity = 0.57
+shadow_opacity = 0.8
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("3_7uq64")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://i3lgu2dyypcq"]
 
-[ext_resource type="Script" path="res://ui/gate_terminal/result.gd" id="1_b6nfm"]
+[ext_resource type="Script" uid="uid://bvcpw40bb4m6n" path="res://ui/gate_terminal/result.gd" id="1_b6nfm"]
 [ext_resource type="Texture2D" uid="uid://bbeapq20uqyec" path="res://levels/gates_icons/gdquest_godot4_demos.png" id="2_djnv4"]
 [ext_resource type="FontFile" uid="uid://b3fr7np67ey1a" path="res://fonts/Inter-Medium.otf" id="3_m4li3"]
 [ext_resource type="Texture2D" uid="uid://2kg3a3nt3bq8" path="res://ui/gate_terminal/bar-chart.png" id="4_uar47"]
@@ -69,8 +69,8 @@ theme_override_constants/separation = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mafe")
-theme_override_styles/hover = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_37xan")
+theme_override_styles/hover = SubResource("StyleBoxFlat_37xan")
 theme_override_styles/focus = SubResource("StyleBoxFlat_37xan")
 
 [node name="MarginContainer" type="MarginContainer" parent="Result/Button"]
