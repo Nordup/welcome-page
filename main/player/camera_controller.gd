@@ -3,7 +3,6 @@ extends Node3D
 
 @export var invert_mouse_y := false
 @export_range(0.0, 1.0) var mouse_sensitivity := 0.25
-@export_range(0.0, 8.0) var joystick_sensitivity := 2.0
 @export var tilt_upper_limit := deg_to_rad(-60.0)
 @export var tilt_lower_limit := deg_to_rad(60.0)
 
