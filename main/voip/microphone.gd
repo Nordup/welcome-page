@@ -6,6 +6,12 @@ static var is_speaking: bool
 var speak_action: StringName = "speak"
 
 
+func _ready() -> void:
+	if Connection.is_server():
+		stop()
+		stream = null
+
+
 func _process(_delta: float) -> void:
 	if not Input.is_action_pressed(speak_action) or EditMode.is_enabled:
 		set_speaking(false)
