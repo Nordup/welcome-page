@@ -74,7 +74,7 @@ func _physics_process(_delta: float) -> void:
 		rpc("opus_data_received", accumulated_opusdata)
 
 
-@rpc("any_peer", "call_remote", "unreliable_ordered", 1)
+@rpc("any_peer", "call_remote", "unreliable", 1)
 func opus_data_received(opusdata_array: Array[PackedByteArray]) -> void:
 	if Connection.is_server(): return
 	
