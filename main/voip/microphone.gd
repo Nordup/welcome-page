@@ -29,6 +29,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func set_speaking(speaking: bool) -> void:
 	if speaking == is_speaking: return
+	if speaking: play()
+	else: stop()
+	
 	is_speaking = speaking
 
 

@@ -59,7 +59,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var accumulated_opusdata: Array[PackedByteArray] = []
 	while opuschunked.chunk_available():
-		if not should_send_opus_data():
+		if not Connection.is_peer_connected:
 			opuschunked.drop_chunk()
 			continue
 		
@@ -70,12 +70,8 @@ func _physics_process(_delta: float) -> void:
 		opuschunked.drop_chunk()
 		accumulated_opusdata.append(opusdata)
 	
-	if should_send_opus_data() and accumulated_opusdata.size() > 0:
+	if Connection.is_peer_connected and accumulated_opusdata.size() > 0:
 		rpc("opus_data_received", accumulated_opusdata)
-
-
-func should_send_opus_data() -> bool:
-	return Microphone.is_speaking and Connection.is_peer_connected
 
 
 @rpc("any_peer", "call_remote", "unreliable_ordered", 1)
