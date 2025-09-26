@@ -1,19 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://mqnlrs6hn6g6"]
+[gd_scene load_steps=19 format=3 uid="uid://mqnlrs6hn6g6"]
 
-[ext_resource type="Script" path="res://main/connection/connection.gd" id="1_hlrxf"]
-[ext_resource type="Script" path="res://ui/resolution_changer.gd" id="1_mexsf"]
+[ext_resource type="Script" uid="uid://cae6xbvp4s0c3" path="res://main/connection/connection.gd" id="1_hlrxf"]
+[ext_resource type="Script" uid="uid://ifbcin6lqe5v" path="res://ui/resolution_changer.gd" id="1_mexsf"]
 [ext_resource type="PackedScene" uid="uid://2ne27phhv0kl" path="res://main/user_data/user_data_manager.tscn" id="3_rwvlu"]
-[ext_resource type="Script" path="res://levels/interactable/interactable_input_handler.gd" id="4_86hc2"]
-[ext_resource type="Script" path="res://main/player_spawner.gd" id="4_edyrb"]
+[ext_resource type="Script" uid="uid://4cpxj6qhgo3l" path="res://levels/interactable/interactable_input_handler.gd" id="4_86hc2"]
+[ext_resource type="Script" uid="uid://chf51la0gr44b" path="res://main/player_spawner.gd" id="4_edyrb"]
 [ext_resource type="PackedScene" uid="uid://cvl4jsitsxp0u" path="res://ui/ui.tscn" id="4_fvou2"]
 [ext_resource type="Resource" uid="uid://dgrhxxb8pf7wr" path="res://levels/interactable/interactable_events.res" id="5_irmxe"]
-[ext_resource type="Script" path="res://main/chat/chat.gd" id="5_tb3oc"]
+[ext_resource type="Script" uid="uid://cicrovjwv6qlv" path="res://main/chat/chat.gd" id="5_tb3oc"]
 [ext_resource type="PackedScene" uid="uid://ciqrpd5675boy" path="res://main/player/player.tscn" id="5_wb2xi"]
 [ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="6_apsyc"]
 [ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection/connection_events.res" id="6_p6o06"]
-[ext_resource type="Script" path="res://main/connection/connection_manager.gd" id="6_snsvh"]
-[ext_resource type="Script" path="res://main/fall_checker.gd" id="9_vk48u"]
+[ext_resource type="Script" uid="uid://0suyruexksr4" path="res://main/connection/connection_manager.gd" id="6_snsvh"]
+[ext_resource type="Script" uid="uid://r2q0ucopmlfn" path="res://main/fall_checker.gd" id="9_vk48u"]
+[ext_resource type="Script" uid="uid://cqxq6htu0i1ug" path="res://main/voip/voip_manager.gd" id="10_5xyti"]
 [ext_resource type="PackedScene" uid="uid://d3ougjr7jxnnt" path="res://levels/hub_level.tscn" id="10_acu3x"]
+[ext_resource type="Script" uid="uid://c3funj84b2o7x" path="res://main/voip/microphone.gd" id="11_n3o0a"]
+[ext_resource type="PackedScene" uid="uid://bjywb13vy4hl4" path="res://main/voip/voip_user.tscn" id="11_s758e"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_s758e"]
 
 [node name="Main" type="Node"]
 
@@ -42,6 +47,18 @@ script = ExtResource("1_hlrxf")
 port = 56612
 max_clients = 256
 host = "188.245.188.59"
+use_localhost_in_editor = true
+
+[node name="VoipManager" type="Node" parent="." node_paths=PackedStringArray("player_spawner")]
+script = ExtResource("10_5xyti")
+user_scn = ExtResource("11_s758e")
+player_spawner = NodePath("../PlayerSpawner")
+
+[node name="Microphone" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_s758e")
+autoplay = true
+bus = &"Record"
+script = ExtResource("11_n3o0a")
 
 [node name="UI" parent="." instance=ExtResource("4_fvou2")]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://ciqrpd5675boy"]
 
-[ext_resource type="Script" path="res://main/player/player.gd" id="1_pdbxc"]
-[ext_resource type="Script" path="res://main/player/camera_controller.gd" id="2_2fob2"]
-[ext_resource type="Script" path="res://main/player/audio_listener.gd" id="2_4csdy"]
-[ext_resource type="Script" path="res://main/player/camera.gd" id="3_qxleh"]
+[ext_resource type="Script" uid="uid://ch0sseha81wc7" path="res://main/player/player.gd" id="1_pdbxc"]
+[ext_resource type="Script" uid="uid://yfh6uovdlcsk" path="res://main/player/camera_controller.gd" id="2_2fob2"]
+[ext_resource type="Script" uid="uid://cuhiwgq45t8ui" path="res://main/player/audio_listener.gd" id="2_4csdy"]
+[ext_resource type="Script" uid="uid://m86re3rai4x6" path="res://main/player/camera.gd" id="3_qxleh"]
 [ext_resource type="PackedScene" uid="uid://c0mo8tek77du4" path="res://main/player/model/character_skin.tscn" id="3_ufinh"]
-[ext_resource type="Script" path="res://ui/player/floating_nickname.gd" id="6_f61mk"]
+[ext_resource type="Script" uid="uid://32mmpoydnoqt" path="res://ui/player/floating_nickname.gd" id="6_f61mk"]
 [ext_resource type="Resource" uid="uid://rclnl7v8k722" path="res://main/user_data/user_data_events.res" id="7_bgpps"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8x2xm"]
@@ -69,6 +69,7 @@ shape = SubResource("CapsuleShape3D_8x2xm")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -0.2)
+doppler_tracking = 2
 script = ExtResource("2_4csdy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AudioListener3D"]
