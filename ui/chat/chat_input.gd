@@ -16,6 +16,16 @@ func _ready() -> void:
 	focus_entered.connect(start_edit)
 	focus_exited.connect(stop_edit)
 	connection_events.status_changed.connect(change_help_text)
+	user_data_events.user_data_spawned.connect(on_user_data_spawned)
+
+
+func on_user_data_spawned(id: int, user_data: UserData) -> void:
+	if id != multiplayer.get_unique_id(): return
+	
+	username = user_data.nickname
+	if not username.is_empty():
+		placeholder_text = "'Enter' to chat, 'N' to change name"
+		chat_events.set_username_emit(username)
 
 
 func change_help_text(status : ConnectionEvents.Status) -> void:
@@ -29,7 +39,7 @@ func change_help_text(status : ConnectionEvents.Status) -> void:
 
 
 func edit_name() -> void:
-	placeholder_text = "'Enter' you name"
+	placeholder_text = "'Enter' your name"
 	is_edit_name = true
 
 

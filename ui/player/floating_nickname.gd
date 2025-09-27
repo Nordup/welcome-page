@@ -44,7 +44,8 @@ func retrieve_user_data(id: int, _user_data: UserData) -> void:
 
 
 func nickname_changed(nickname: String) -> void:
-	label.text = nickname
+	if user_data.nickname.is_empty(): label.text = "Me" if user_data.is_my_data else "Player One"
+	else: label.text = user_data.nickname
 
 
 func speaking_changed(speaking: bool) -> void:
