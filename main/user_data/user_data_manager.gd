@@ -20,6 +20,7 @@ func user_data_spawned(id: int, user_data: UserData) -> void:
 	if id == multiplayer.get_unique_id():
 		user_data.is_my_data = true
 		my_user_data = user_data
+		user_data.load_nickname()
 	else:
 		user_datas[id] = user_data
 	

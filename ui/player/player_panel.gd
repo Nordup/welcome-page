@@ -11,8 +11,8 @@ var user_data: UserData
 
 
 func _ready() -> void:
-	user_data.nickname = "Player One"
 	speaking_indicator.visible = false
+	nickname_changed(user_data.nickname)
 	
 	volume_slider.value_changed.connect(volume_changed)
 
@@ -30,14 +30,13 @@ func set_user_data(_user_data: UserData) -> void:
 
 
 func my_panel() -> void:
-	nickname_label.text = "Me"
 	volume_slider.visible = false
 	hints.visible = true
 
 
 func nickname_changed(nickname: String) -> void:
-	print("nickname_changed: ", nickname)
-	nickname_label.text = nickname
+	if user_data.nickname.is_empty(): nickname_label.text = "Me" if user_data.is_my_data else "Player One"
+	else: nickname_label.text = user_data.nickname
 
 
 func speaking_changed(speaking: bool) -> void:
