@@ -24,10 +24,10 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(1, 1, 1, 0.70000005)
 border_blend = true
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjla7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -70,7 +70,7 @@ alignment = 2
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" node_paths=PackedStringArray("scroll", "container", "help_text")]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 12
 theme_override_constants/margin_right = 15
 script = ExtResource("1_gavtj")
 chat_events = ExtResource("5_5ehaj")
@@ -107,8 +107,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 14
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer"]
 layout_mode = 2
@@ -118,7 +118,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.588235)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.832)
 theme_override_fonts/font = ExtResource("1_xvwmp")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_fjla7")
@@ -134,6 +134,7 @@ send_sound = NodePath("../../../../../Send")
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("8_kp1p0")
 stretch_mode = 3
 

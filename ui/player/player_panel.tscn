@@ -44,8 +44,8 @@ offset_bottom = 70.0
 mouse_filter = 1
 script = ExtResource("1_hxm32")
 nickname_label = NodePath("MarginContainer/VBoxContainer/Control/Nickname")
-volume_slider = NodePath("MarginContainer/VBoxContainer/VolumeSlider")
-hints = NodePath("MarginContainer/VBoxContainer/Hints")
+volume_slider = NodePath("MarginContainer/VBoxContainer/MarginContainer/VolumeSlider")
+hints = NodePath("MarginContainer/VBoxContainer/MarginContainer/Hints")
 speaking_indicator = NodePath("MarginContainer/VBoxContainer/Control/SpeakIndicator")
 user_data_events = ExtResource("2_y2iyx")
 
@@ -108,7 +108,11 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oc66c")
 
-[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxLine_1pmgd")
@@ -118,7 +122,7 @@ step = 0.01
 value = 0.701
 scrollable = false
 
-[node name="Hints" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="Hints" type="RichTextLabel" parent="MarginContainer/VBoxContainer/MarginContainer"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
