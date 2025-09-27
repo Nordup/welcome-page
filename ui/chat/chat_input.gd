@@ -25,6 +25,7 @@ func on_user_data_spawned(id: int, user_data: UserData) -> void:
 	username = user_data.nickname
 	if not username.is_empty():
 		placeholder_text = "'Enter' to chat, 'N' to change name"
+		is_edit_name = false
 		chat_events.set_username_emit(username)
 
 
