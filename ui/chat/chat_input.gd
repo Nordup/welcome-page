@@ -1,6 +1,7 @@
 extends LineEdit
 
 @export var chat_events: ChatEvents
+@export var user_data_events: UserDataEvents
 @export var connection_events: ConnectionEvents
 @export var send_sound: AudioStreamPlayer
 
@@ -80,6 +81,7 @@ func on_text_submitted(_text: String) -> void:
 		if not text.is_empty():
 			username = text
 			chat_events.set_username_emit(text)
+			user_data_events.user_data_manager.my_user_data.nickname = text
 	else:
 		chat_events.send_message_emit(username, text)
 	

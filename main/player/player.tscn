@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciqrpd5675boy"]
+[gd_scene load_steps=20 format=3 uid="uid://ciqrpd5675boy"]
 
 [ext_resource type="Script" uid="uid://ch0sseha81wc7" path="res://main/player/player.gd" id="1_pdbxc"]
 [ext_resource type="Script" uid="uid://yfh6uovdlcsk" path="res://main/player/camera_controller.gd" id="2_2fob2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0mo8tek77du4" path="res://main/player/model/character_skin.tscn" id="3_ufinh"]
 [ext_resource type="Script" uid="uid://32mmpoydnoqt" path="res://ui/player/floating_nickname.gd" id="6_f61mk"]
 [ext_resource type="Resource" uid="uid://rclnl7v8k722" path="res://main/user_data/user_data_events.res" id="7_bgpps"]
+[ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="8_iy4cy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8x2xm"]
 
@@ -145,6 +146,7 @@ alignment = 1
 [node name="Nickname" type="Label" parent="Nickname/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("8_iy4cy")
 text = "Player One"
 label_settings = SubResource("LabelSettings_sr337")
 horizontal_alignment = 1
@@ -160,9 +162,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -4.0
+offset_top = -6.5
 offset_right = 13.0
-offset_bottom = 9.0
+offset_bottom = 6.5
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4

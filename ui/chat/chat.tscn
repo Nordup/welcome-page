@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cykcjgluho2ko"]
+[gd_scene load_steps=14 format=3 uid="uid://cykcjgluho2ko"]
 
-[ext_resource type="Script" path="res://ui/chat/chat_view.gd" id="1_gavtj"]
+[ext_resource type="Script" uid="uid://cea1vixh7h4je" path="res://ui/chat/chat_view.gd" id="1_gavtj"]
 [ext_resource type="FontFile" uid="uid://c638pe1c08oaa" path="res://fonts/Inter-Regular.otf" id="1_xvwmp"]
-[ext_resource type="Script" path="res://ui/chat/help_text.gd" id="2_jwt1o"]
+[ext_resource type="Script" uid="uid://dwic0sdovpo2p" path="res://ui/chat/help_text.gd" id="2_jwt1o"]
 [ext_resource type="PackedScene" uid="uid://bc6oaxd1e2055" path="res://ui/chat/chat_message.tscn" id="3_2sdal"]
 [ext_resource type="Resource" uid="uid://b7i7ukiyxx6ha" path="res://main/connection/connection_events.res" id="3_v83rb"]
-[ext_resource type="Script" path="res://ui/chat/chat_input.gd" id="4_gow1v"]
+[ext_resource type="Script" uid="uid://tfqujwlkeq4u" path="res://ui/chat/chat_input.gd" id="4_gow1v"]
 [ext_resource type="Resource" uid="uid://mda58iisedd7" path="res://main/chat/chat_events.res" id="5_5ehaj"]
+[ext_resource type="Resource" uid="uid://rclnl7v8k722" path="res://main/user_data/user_data_events.res" id="8_k5fu7"]
 [ext_resource type="Texture2D" uid="uid://bmqi2ua7oxy8u" path="res://ui/chat/enter-key.png" id="8_kp1p0"]
 [ext_resource type="AudioStream" uid="uid://q0a0evylbrlk" path="res://ui/chat/send.wav" id="9_6gfjo"]
 
@@ -15,13 +16,13 @@ font = ExtResource("1_xvwmp")
 font_size = 22
 font_color = Color(1, 0.716667, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e8ob"]
-bg_color = Color(1, 1, 1, 0.313726)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hmly"]
+bg_color = Color(1, 1, 1, 0.5)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 1, 1, 0.505882)
+border_color = Color(1, 1, 1, 0.70000005)
 border_blend = true
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -38,12 +39,12 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 80.0
 offset_top = -480.0
-offset_right = 580.0
+offset_right = 520.0
 offset_bottom = -80.0
 grow_vertical = 0
 
 [node name="GetHelpText" type="Label" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 10.0
 offset_top = 151.0
 offset_right = 480.0
@@ -97,7 +98,7 @@ text = "Welcome to our Hub!"
 [node name="Panel" type="Panel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5e8ob")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hmly")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
 layout_mode = 1
@@ -116,16 +117,17 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.588235)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("1_xvwmp")
 theme_override_font_sizes/font_size = 22
-theme_override_styles/read_only = SubResource("StyleBoxFlat_fjla7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fjla7")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_fjla7")
 placeholder_text = "Wait for connection to chat"
 editable = false
 script = ExtResource("4_gow1v")
 chat_events = ExtResource("5_5ehaj")
+user_data_events = ExtResource("8_k5fu7")
 connection_events = ExtResource("3_v83rb")
 send_sound = NodePath("../../../../../Send")
 

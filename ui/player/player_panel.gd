@@ -1,25 +1,20 @@
 extends Control
 class_name PlayerPanel
 
-@export var nickname_edit: LineEdit
+@export var nickname_label: Label
 @export var volume_slider: HSlider
+@export var hints: RichTextLabel
 @export var speaking_indicator: Control
-@export var animation_player: AnimationPlayer
 @export var user_data_events: UserDataEvents
 
 var user_data: UserData
 
 
 func _ready() -> void:
-	user_data.nickname = nickname_edit.text
+	user_data.nickname = "Player One"
 	speaking_indicator.visible = false
 	
-	nickname_edit.text_submitted.connect(text_submitted)
 	volume_slider.value_changed.connect(volume_changed)
-
-
-func text_submitted(nickname: String) -> void:
-	user_data.nickname = nickname
 
 
 func volume_changed(volume: float) -> void:
@@ -28,14 +23,21 @@ func volume_changed(volume: float) -> void:
 
 func set_user_data(_user_data: UserData) -> void:
 	user_data = _user_data
-	if user_data.is_my_data: animation_player.play("my_panel")
+	if user_data.is_my_data: my_panel()
 	
 	user_data.nickname_changed.connect(nickname_changed)
 	user_data.speaking_changed.connect(speaking_changed)
 
 
+func my_panel() -> void:
+	nickname_label.text = "Me"
+	volume_slider.visible = false
+	hints.visible = true
+
+
 func nickname_changed(nickname: String) -> void:
-	nickname_edit.text = nickname
+	print("nickname_changed: ", nickname)
+	nickname_label.text = nickname
 
 
 func speaking_changed(speaking: bool) -> void:
