@@ -97,8 +97,8 @@
 [node name="HubLevel" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.418019, -0.388442, 0.821202, -0.300263, 0.912244, 0.278663, -0.857381, -0.130091, -0.49797, 0, 22.7338, 0)
-light_energy = 0.6
+transform = Transform3D(-0.74783564, -0.1694053, 0.6419064, 0.025111914, 0.9589852, 0.28234145, -0.6634089, 0.22726446, -0.7129092, 0, 22.7338, 0)
+light_energy = 0.5
 shadow_enabled = true
 shadow_opacity = 0.8
 
