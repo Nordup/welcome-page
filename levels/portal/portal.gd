@@ -29,7 +29,7 @@ func play_enter_audio():
 func hide_client(player: Player):
 	await get_tree().create_timer(0.05).timeout
 	player.visible = false
-	player._nickname.visible = false
+	player.nickname.visible = false
 	
 	# In case of interpolation error, show body if server hasn't kicked out the client
 	await get_tree().create_timer(network_timeout + 1.0).timeout

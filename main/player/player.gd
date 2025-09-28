@@ -19,7 +19,7 @@ class_name Player
 ## Clamp sync delta for faster interpolation
 @export var sync_delta_max := 0.2
 
-@onready var nickname: Control = $Nickname
+@onready var nickname: Control = $Nickname/HBoxContainer
 @onready var _rotation_root: Node3D = $CharacterRotationRoot
 @onready var _camera_controller: CameraController = $CameraController
 @onready var _ground_shapecast: ShapeCast3D = $GroundShapeCast
