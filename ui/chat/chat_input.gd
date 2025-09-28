@@ -46,7 +46,9 @@ func edit_name() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not editable: return
-	if is_writing: return
+	if is_writing:
+		if event.is_action_pressed(&"ui_text_clear_carets_and_selection"): release_focus()
+		return
 	
 	var is_chat = event.is_action_pressed("chat")
 	var is_change_name = event.is_action_pressed("change_name")
