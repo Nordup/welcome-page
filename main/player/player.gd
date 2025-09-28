@@ -24,6 +24,7 @@ class_name Player
 @onready var _ground_shapecast: ShapeCast3D = $GroundShapeCast
 @onready var _character_skin: CharacterSkin = $CharacterRotationRoot/CharacterSkin
 @onready var _synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
+@onready var _nickname: Control = $Nickname
 
 @onready var _move_direction := Vector3.ZERO
 @onready var _last_strong_direction := Vector3.FORWARD
