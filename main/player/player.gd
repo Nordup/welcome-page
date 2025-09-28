@@ -19,12 +19,12 @@ class_name Player
 ## Clamp sync delta for faster interpolation
 @export var sync_delta_max := 0.2
 
+@onready var nickname: Control = $Nickname
 @onready var _rotation_root: Node3D = $CharacterRotationRoot
 @onready var _camera_controller: CameraController = $CameraController
 @onready var _ground_shapecast: ShapeCast3D = $GroundShapeCast
 @onready var _character_skin: CharacterSkin = $CharacterRotationRoot/CharacterSkin
 @onready var _synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
-@onready var _nickname: Control = $Nickname
 
 @onready var _move_direction := Vector3.ZERO
 @onready var _last_strong_direction := Vector3.FORWARD

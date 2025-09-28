@@ -4,6 +4,7 @@ class_name UserDataManager
 @export var user_data_spawner: UserDataSpawner
 @export var user_data_events: UserDataEvents
 
+var my_id: int = -1
 var my_user_data: UserData
 var user_datas = {} # {Peer ID: UserData}
 
@@ -20,6 +21,7 @@ func user_data_spawned(id: int, user_data: UserData) -> void:
 	if id == multiplayer.get_unique_id():
 		user_data.is_my_data = true
 		my_user_data = user_data
+		my_id = id
 		user_data.load_nickname()
 	else:
 		user_datas[id] = user_data
@@ -28,8 +30,9 @@ func user_data_spawned(id: int, user_data: UserData) -> void:
 
 
 func user_data_despawned(id: int) -> void:
-	if id == multiplayer.get_unique_id():
+	if id == my_id:
 		my_user_data = null
+		my_id = -1
 	else:
 		user_datas.erase(id)
 	

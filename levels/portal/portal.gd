@@ -35,4 +35,4 @@ func hide_client(player: Player):
 	await get_tree().create_timer(network_timeout + 1.0).timeout
 	if is_instance_valid(player):
 		player.visible = true
-		player._nickname.visible = true
+		player.nickname.visible = true
