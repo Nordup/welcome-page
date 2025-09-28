@@ -11,6 +11,7 @@ func _ready() -> void:
 	spawn_function = custom_spawn
 	multiplayer.peer_connected.connect(create_user_data)
 	multiplayer.peer_disconnected.connect(destroy_user_data)
+	multiplayer.server_disconnected.connect(destroy_all_user_data)
 	spawned.connect(on_spawned)
 	despawned.connect(on_despawned)
 
@@ -23,6 +24,12 @@ func create_user_data(id: int):
 func destroy_user_data(id: int):
 	if not multiplayer.is_server(): return
 	get_node(spawn_path).get_node(str(id)).queue_free()
+
+
+func destroy_all_user_data():
+	for u in get_node(spawn_path).get_children():
+		u.queue_free()
+		on_despawned(u)
 
 
 func custom_spawn(vars) -> Node:
