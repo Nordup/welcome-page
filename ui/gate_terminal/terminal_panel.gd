@@ -25,8 +25,6 @@ func on_interactable_entered(_text: String, interactable: InteractableBase) -> v
 	
 	current = interactable
 	current.on_interact.connect(show_panel)
-	
-	show_panel()
 
 
 func on_interactable_exited(interactable: InteractableBase) -> void:
