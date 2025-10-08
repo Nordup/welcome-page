@@ -12,7 +12,6 @@ var is_writing: bool
 
 func _ready() -> void:
 	text_submitted.connect(on_text_submitted)
-	text_changed.connect(on_text_changed)
 	focus_entered.connect(start_edit)
 	focus_exited.connect(stop_edit)
 	connection_events.status_changed.connect(change_help_text)
@@ -70,13 +69,6 @@ func start_edit() -> void:
 func stop_edit() -> void:
 	is_writing = false
 	EditMode.set_enabled(false)
-
-
-func on_text_changed(_text: String) -> void:
-	if not is_edit_name: return
-	text = text.replace(" ", "")
-	text = text.replace('\t', "")
-	caret_column = text.length()
 
 
 func on_text_submitted(_text: String) -> void:
